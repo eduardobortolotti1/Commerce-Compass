@@ -1,0 +1,22 @@
+#root {
+    width: 100%;
+}
+
+body {
+    font-family: Helvetica, sans-serif !important;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  color: var(--text-color);
+}
+
+.screen {
+    width: 100% !important;
+    height: 100% !important;
+}
