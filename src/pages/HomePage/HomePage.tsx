@@ -6,10 +6,9 @@ import { Search } from 'react-feather';
 import styled from 'styled-components';
 import InputWithIcon from '../../components/InputWithIcon/InputWithIcon';
 import ProductArea from './components/ProductArea/ProductArea';
-import ProductCarousel from './components/ProductArea/Carousels/ProductCarousel';
 
 const Wrap = styled.div`
-    margin-inline: 25px;
+    margin: 10px 25px 0 25px;
 `;
 
 function HomePage() {

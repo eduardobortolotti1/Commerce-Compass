@@ -13,5 +13,3 @@ function SignInPage() {
 }
 
 export default SignInPage;
-
-// TODO: Add proper Mail and Lock icons in Sign screen

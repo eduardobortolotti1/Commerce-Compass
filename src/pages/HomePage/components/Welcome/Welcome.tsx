@@ -1,13 +1,9 @@
-import { WelcomeComponent } from './styles';
-
 function Welcome() {
     return (
-        <>
-            <WelcomeComponent>
-                <p className=''>Hi, Andrea</p>
-                <p className='fw-bold font-24'>What are you looking for today?</p>
-            </WelcomeComponent>
-        </>
+        <div>
+            <p className='mb-2'>Hi, Andrea</p>
+            <h1 className='fw-bold font-24 mb-4'>What are you looking for today?</h1>
+        </div>
     )
 }
 

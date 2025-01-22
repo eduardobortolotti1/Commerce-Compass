@@ -12,3 +12,5 @@ function App() {
 }
 
 export default App
+
+// TODO: Modify the icon input component from Home page to be more generic. Use it in the Sign In/Up screen.

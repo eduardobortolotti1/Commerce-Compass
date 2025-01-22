@@ -10,6 +10,14 @@
   --accent: #FFC120;
 }
 
+.dm-sans {
+  font-family: "DM Sans" !important;
+}
+
+.montserrat {
+  font-family: "Montserrat" !important;
+}
+
 /* Color classes */
 .color-primary {
   color: var(--primary) !important;

@@ -7,13 +7,12 @@ interface CarouselItemRowProps {
 
 const CarouselItemRowComponent = styled.div`
     display: flex;
-    align-items: center;
     padding: 20px;
 `;
 
 function CarouselItemRow({ children }: CarouselItemRowProps) {
   return (
-    <CarouselItemRowComponent className="row w-100 h-100">
+    <CarouselItemRowComponent className="row w-100 justify-content-strech align-items-stretch">
       {children}  {/* Render the children passed to this component */}
     </CarouselItemRowComponent>
   );

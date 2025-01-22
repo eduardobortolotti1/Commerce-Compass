@@ -5,13 +5,11 @@ import { HeaderComponent } from './styles';
 
 function Header() {
     return (
-        <>
-            <HeaderComponent>
-                <img src={Menu} alt="menu icon" height="20px" width="auto" />
-                <img src={Logo} alt="logo" height="25px" width="auto" />
-                <img src={userIcon} alt="user" height="35px" width="auto"/>
-            </HeaderComponent>
-        </>
+        <HeaderComponent className='d-flex justify-content-between align-items-center'>
+            <button><img src={Menu} alt="menu icon" height="20px" width="auto" /></button>
+            <a href="#Home"><img src={Logo} alt="logo" height="25px" width="auto" /></a>
+            <a href="#"><img src={userIcon} alt="user" height="35px" width="auto" /></a>
+        </HeaderComponent>
     )
 }
 
