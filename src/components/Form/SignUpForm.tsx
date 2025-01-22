@@ -1,4 +1,3 @@
-import ForgotPassword from "./Button/ForgotPassword";
 import InputEmail from "./Input/InputEmail";
 import InputPassword from "./Input/InputPassword";
 import SignUpButton from "./Button/SignUpButton";

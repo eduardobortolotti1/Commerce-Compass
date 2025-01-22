@@ -1,5 +1,5 @@
 import SignUpForm from '../../components/Form/SignUpForm.tsx';
-import { SignPage } from '../styles.ts';
+import { SignPage } from './styles.ts';
 import Intro from './components/Intro.tsx';
 
 function SignUpPage() {
@@ -13,5 +13,3 @@ function SignUpPage() {
 }
 
 export default SignUpPage;
-
-// TODO: Add proper Mail and Lock icons in Sign screen

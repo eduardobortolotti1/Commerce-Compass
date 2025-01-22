@@ -9,6 +9,6 @@ TODO
 @import url(reset.css) layer(reset);
 @import url(figma-styles.css) layer(figma-styles);
 @import url(reusable.css) layer(reusable);
-@import url(page.css) layer(page);
+@import url(main.css) layer(main);
 
-@layer reset, figma-styles, reusable, page;
+@layer reset, figma-styles, reusable, main;
