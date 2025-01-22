@@ -5,7 +5,9 @@ body {
 }
 
 #root {
+  width: 100%;
   max-width: 375px;
+  height: fit-content;
 }
 
 /* OVERRIDES */

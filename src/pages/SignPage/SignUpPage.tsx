@@ -1,5 +1,5 @@
 import SignUpForm from '../../components/Form/SignUpForm.tsx';
-import { SignPage } from '../styles.ts';
+import { SignPage } from './styles.ts';
 import Intro from './components/Intro.tsx';
 
 function SignUpPage() {

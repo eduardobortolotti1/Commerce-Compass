@@ -1,5 +1,5 @@
 import { SignWithGoogleButton } from "./styles";
-import google from "../../../icons/google.svg"
+import google from "@icons/google.svg"
 
 function SignUpWithGoogle() {
     return (
