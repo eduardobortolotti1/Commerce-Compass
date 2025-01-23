@@ -1,12 +1,13 @@
 // import './App.css'
 // import SignUpPage from './pages/SignPage/SignUpPage'
 // import SignInPage from './pages/SignPage/SignInPage'
-import StartPage from './pages/HomePage/HomePage'
+// import HomePage from './pages/HomePage/HomePage'
+import SearchPage from "./pages/SearchPage/SearchPage"
 
 function App() {
   return (
     <>
-      <StartPage />
+      <SearchPage />
     </>
   )
 }
