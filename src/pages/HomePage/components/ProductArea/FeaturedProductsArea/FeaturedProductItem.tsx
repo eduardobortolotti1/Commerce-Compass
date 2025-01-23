@@ -6,7 +6,6 @@ const FeaturedProductItemComponent = styled.div`
     width: 100%;
     background-color: var(--white);
     border-radius: 15px;
-    transform: scaleX(0.95); /* Scales down the content */
     transform-origin: center; /* Keeps the content centered */
     padding: 15px 10px 15px 10px;
     min-height: 215px;
@@ -26,7 +25,7 @@ function FeaturedProductItem({ name, imageUrl, currency, value, id, children }: 
     return (
         <FeaturedProductItemComponent className="d-flex flex-column">
             <FeaturedProductImage>
-                <img src={imageUrl} alt={name} draggable={false} />
+                <img src={imageUrl} alt={name} draggable={false} height="125px" />
             </FeaturedProductImage>
             <FeaturedProductText name={name} currency={currency} value={value} />
             {children}

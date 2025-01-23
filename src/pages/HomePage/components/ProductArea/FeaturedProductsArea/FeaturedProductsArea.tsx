@@ -1,7 +1,8 @@
-import ProductCarousel from "../Carousels/ProductCarousel";
+import ProductCarousel from "../Carousels/ProductCarousel/ProductCarousel";
 import FeaturedProductItem from "./FeaturedProductItem";
 import Headphone from "@images/headphone.png"
 import Cables from "@images/cable.png"
+import ProductSwiper from "../../../../../components/ProductSwiper/ProductSwiper";
 
 function FeaturedProductsArea() {
     return (
@@ -12,14 +13,14 @@ function FeaturedProductsArea() {
                 </h2>
                 <a href="#see-all" className="text-decoration-none color-grey-dark-1">See all</a>
             </div>
-            <ProductCarousel infinite={true} slidesToShow={2.035} slidesToScroll={2} initialSlide={1} centerMode={true} centerPadding={"25px"}>
+            <ProductSwiper slidesPerView={2} isFreeMode={true} spaceBetween={15}>
                 <FeaturedProductItem name={"TMA-2 HD Wireless"} imageUrl={Headphone} id={""} currency={"USD"} value={"350"} />
                 <FeaturedProductItem name={"C02 - Cable"} imageUrl={Cables} id={""} currency={"USD"} value={"25"} />
                 <FeaturedProductItem name={"TMA-2 HD Wireless"} imageUrl={Headphone} id={""} currency={"USD"} value={"350"} />
                 <FeaturedProductItem name={"C02 - Cable"} imageUrl={Cables} id={""} currency={"USD"} value={"25"} />
                 <FeaturedProductItem name={"TMA-2 HD Wireless"} imageUrl={Headphone} id={""} currency={"USD"} value={"350"} />
                 <FeaturedProductItem name={"C02 - Cable"} imageUrl={Cables} id={""} currency={"USD"} value={"25"} />
-            </ProductCarousel>
+            </ProductSwiper>
         </>
     )
 }

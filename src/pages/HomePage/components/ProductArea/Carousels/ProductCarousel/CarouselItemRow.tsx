@@ -12,7 +12,7 @@ const CarouselItemRowComponent = styled.div`
 
 function CarouselItemRow({ children }: CarouselItemRowProps) {
   return (
-    <CarouselItemRowComponent className="row w-100 justify-content-strech align-items-stretch">
+    <CarouselItemRowComponent className="row h-100 justify-content-strech align-items-stretch">
       {children}  {/* Render the children passed to this component */}
     </CarouselItemRowComponent>
   );
