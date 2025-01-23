@@ -14,9 +14,12 @@ interface ProductItemProps {
 
 const ProductItemComponent = styled.div`
     gap: 15px;
+    border-radius: 10px;
+    transition: background-color 0.2s;
 
     &:hover {
         cursor: pointer;
+        background-color: var(--grey-light-1);
     }
 `;
 

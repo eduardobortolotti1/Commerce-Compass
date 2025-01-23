@@ -6,6 +6,10 @@ import Headphone from "@images/headphone.png"
 import SearchResults from "./components/SearchResults";
 import ProductItem from "./components/ProductItem/ProductItem";
 import PopularProducts from "./components/PopularProducts";
+import NavBackButton from "../../components/Header/subcomponents/NavBackButton";
+import NavSearchText from "../../components/Header/subcomponents/NavSearchText";
+import Header from "../../components/Header/Header";
+import NavShoppingCartButton from "../../components/Header/subcomponents/NavShoppingCartButton";
 
 const SearchPageComponent = styled.div`
     padding: 0 30px 30px 30px;
@@ -14,7 +18,11 @@ const SearchPageComponent = styled.div`
 function SearchPage() {
     return (
         <SearchPageComponent>
-            <SearchNav />
+            <Header>
+                <NavBackButton />
+                <NavSearchText />
+                <NavShoppingCartButton />
+            </Header>
             <InputWithIcon icon={Search} placeholder={"Search Headphone"} />
             <SearchResults>
                 <ProductItem productId="1337" imageUrl={Headphone} name={"TMA-2 Comfort Wireless "} currency={"USD"} value={"270"} stars={"4.6"} reviews={"3"} />

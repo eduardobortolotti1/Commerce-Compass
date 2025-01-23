@@ -2,7 +2,7 @@ import styled from "styled-components"
 import FeaturedProductText from "./FeaturedProductText"
 import FeaturedProductImage from "./FeaturedProductImage"
 
-const CarouselItemComponent = styled.div`
+const FeaturedProductItemComponent = styled.div`
     width: 100%;
     background-color: var(--white);
     border-radius: 15px;
@@ -19,16 +19,18 @@ interface ProductItemProps {
     currency: string
     value: string
     id: string
+    children?: React.ReactNode
 }
 
-function FeaturedProductItem({ name, imageUrl, currency, value, id }: ProductItemProps) {
+function FeaturedProductItem({ name, imageUrl, currency, value, id, children }: ProductItemProps) {
     return (
-        <CarouselItemComponent className="d-flex flex-column">
+        <FeaturedProductItemComponent className="d-flex flex-column">
             <FeaturedProductImage>
                 <img src={imageUrl} alt={name} draggable={false} />
             </FeaturedProductImage>
             <FeaturedProductText name={name} currency={currency} value={value} />
-        </CarouselItemComponent>
+            {children}
+        </FeaturedProductItemComponent>
     )
 }
 

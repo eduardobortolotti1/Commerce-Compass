@@ -2,12 +2,13 @@
 // import SignUpPage from './pages/SignPage/SignUpPage'
 // import SignInPage from './pages/SignPage/SignInPage'
 // import HomePage from './pages/HomePage/HomePage'
+import HomePage from "./pages/HomePage/HomePage"
 import SearchPage from "./pages/SearchPage/SearchPage"
 
 function App() {
   return (
     <>
-      <SearchPage />
+      <HomePage />
     </>
   )
 }
