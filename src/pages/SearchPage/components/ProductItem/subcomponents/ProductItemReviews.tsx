@@ -8,8 +8,8 @@ const ProductReviews = styled.div`
 `;
 
 interface ProductItemReviewsProps {
-    stars: string
-    reviews: string
+    stars: number
+    reviews: number
 }
 
 function ProductItemReviews({ stars, reviews }: ProductItemReviewsProps) {
