@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface ProductAreaContainerProps {
+  children?: React.ReactNode;  
+}
+
 const ProductAreaComponent = styled.div`
     display: flex;
     flex-direction: column;
@@ -15,4 +19,12 @@ const ProductAreaComponent = styled.div`
     }
 `;
 
-export { ProductAreaComponent }
+function ProductAreaContainer({ children,  }: ProductAreaContainerProps) {
+  return (
+    <ProductAreaComponent>
+      {children}
+    </ProductAreaComponent>
+  );
+}
+
+export default ProductAreaContainer;

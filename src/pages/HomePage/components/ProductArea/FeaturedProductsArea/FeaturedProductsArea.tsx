@@ -1,10 +1,13 @@
-import ProductCarousel from "../Carousels/ProductCarousel/ProductCarousel";
 import FeaturedProductItem from "./FeaturedProductItem";
 import Headphone from "@images/headphone.png"
 import Cables from "@images/cable.png"
 import ProductSwiper from "../../../../../components/ProductSwiper/ProductSwiper";
 
-function FeaturedProductsArea() {
+interface FeaturedProductsAreaProps {
+    children?: React.ReactNode
+}
+
+function FeaturedProductsArea({ children }: FeaturedProductsAreaProps) {
     return (
         <>
             <div className="d-flex justify-content-between">

@@ -19,7 +19,7 @@ interface ProductItemProps {
     id: string
 }
 
-function ProductItem({name, imageUrl, id}: ProductItemProps) {
+function ProductBannerItem({name, imageUrl, id}: ProductItemProps) {
     return (
         <CarouselItemComponent>
             <CarouselItemRow>
@@ -37,4 +37,4 @@ function ProductItem({name, imageUrl, id}: ProductItemProps) {
     )
 }
 
-export default ProductItem
+export default ProductBannerItem

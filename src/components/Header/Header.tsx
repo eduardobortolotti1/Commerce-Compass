@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface HeaderProps {
-    children: React.ReactNode
+    children?: React.ReactNode
 }
 
 const HeaderComponent = styled.header`

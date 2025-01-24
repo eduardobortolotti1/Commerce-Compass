@@ -1,9 +1,15 @@
 import { ShoppingCart } from "react-feather";
+import ShoppingCartBadge from "./ShoppingCartBadge";
 
-function NavShoppingCartButton() {
+interface NavShoppingCartButtonProps {
+    amountInCart?: number
+}
+
+function NavShoppingCartButton({ amountInCart }: NavShoppingCartButtonProps) {
     return (
-        <button>
+        <button className="position-relative">
             <ShoppingCart />
+            {amountInCart ? <ShoppingCartBadge amountInCart={amountInCart} ></ShoppingCartBadge> : null}
         </button>
     );
 }
