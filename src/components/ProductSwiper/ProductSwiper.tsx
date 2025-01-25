@@ -10,7 +10,7 @@ interface ProductSwiperProps {
     isFreeMode?: boolean; // Enable free mode
     children: React.ReactNode; // Allows single or multiple children
     style?: React.CSSProperties; // Style of the component
-    className: string
+    className?: string
 }
 
 function ProductSwiper({ spaceBetween, slidesPerView, isFreeMode, children, style, className }: ProductSwiperProps) {

@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import ProductSwiper from "../../../components/ProductSwiper/ProductSwiper";
-import ProductSwiperStyle1 from "../../../components/ProductSwiper/ProductSwiperStyle1";
+import ProductSwiperStyle1 from "../../../../components/ProductSwiper/ProductSwiperStyle1";
 
 interface AnotherProductAreaProps {
     children?: React.ReactNode;
