@@ -13,12 +13,16 @@ const ButtonWrapper = styled.div`
 
 // Styled components
 const ButtonInactive = styled.button`
-  padding-block: 3px;
-  font-size: 16px;
-  border-radius: 30px;
+    padding-block: 3px;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
 `;
 
 const ButtonActive = styled(ButtonInactive)`
+    position: relative; /* Ensure ::after is positioned relative to the button */
     &::after {
         position: absolute;
         content: "";
@@ -26,28 +30,34 @@ const ButtonActive = styled(ButtonInactive)`
         margin: 0 auto;
         right: 0;
         left: 0;
+        bottom: 0;
         width: 0%;
         height: 3px;
         background-color: var(--primary);
         border-radius: 3px;
-        transition: 1s ease; /* Smooth transition */
+        transition: width 0.5s ease; /* Smooth transition for width */
     }
 
-    /* Expand the underline when active */
     &.active::after {
-        width: 40%; /* Final width for the underline */
+        animation: expand 0.5s ease forwards; /* Use animation for expand effect */
+    }
+
+    @keyframes expand {
+        from {
+            width: 0%;
+        }
+        to {
+            width: 40%;
+        }
     }
 `;
 
-// Child component
 function DetailNavButton({ text, isActive, onClick }: ButtonProps) {
-    return isActive ? (
+    return (
         <ButtonWrapper>
-            <ButtonActive onClick={onClick} className={isActive? "active" : ""}>{text}</ButtonActive>
-        </ButtonWrapper>
-    ) : (
-        <ButtonWrapper>
-            <ButtonInactive onClick={onClick}>{text}</ButtonInactive>
+            <ButtonActive onClick={onClick} className={isActive ? "active" : ""}>
+                {text}
+            </ButtonActive>
         </ButtonWrapper>
     );
 }

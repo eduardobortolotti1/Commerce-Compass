@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import DetailNavButton from "./subcomponents/DetailNavButton";
 
 const DetailNavButtonComponent = styled.button`
     display: flex;
