@@ -6,7 +6,7 @@ import SearchResults from "./components/SearchResults";
 import ProductItem from "./components/ProductItem/ProductItem";
 import PopularProducts from "./components/PopularProducts";
 import NavBackButton from "../../components/Header/subcomponents/NavBackButton";
-import NavSearchText from "../../components/Header/subcomponents/NavSearchText";
+import NavText from "../../components/Header/subcomponents/NavText";
 import Header from "../../components/Header/Header";
 import NavShoppingCartButton from "../../components/Header/subcomponents/NavShoppingCartButton";
 
@@ -19,7 +19,7 @@ function SearchPage() {
         <SearchPageComponent>
             <Header>
                 <NavBackButton />
-                <NavSearchText />
+                <NavText text={"Search"} />
                 <NavShoppingCartButton />
             </Header>
             <InputWithIcon icon={Search} placeholder={"Search Headphone"} />

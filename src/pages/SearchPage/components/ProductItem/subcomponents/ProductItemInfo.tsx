@@ -2,12 +2,16 @@ interface ProductItemInfoProps {
     name: string
     currency: string
     value: string
+    productId?: string
 }
 
-    function ProductItemInfo({ name, currency, value }: ProductItemInfoProps) {
+function ProductItemInfo({ name, currency, value, productId }: ProductItemInfoProps) {
     return (
         <div>
-            <p className="m-0">{name}</p>
+            {productId ?
+                <a href={`#${productId}`} className="m-0 text-decoration-none color-default">{name}</a> :
+                <p className="m-0">{name}</p>
+            }
             <p className="fw-bold font-14 m-0">{currency} {value}</p>
         </div>
     );

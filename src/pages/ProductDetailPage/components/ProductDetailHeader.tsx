@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import ProductDetailNav from "./ProductDetailNav/ProductDetailNav";
 import DetailNavButton from "./ProductDetailNav/subcomponents/DetailNavButton";
 import { useState } from "react";
 
@@ -36,7 +35,6 @@ function ProductDetailHeader({ name, currency, value, updateFunction }: ProductD
         <ProductDetailHeaderComponent>
             <h3 className="fw-bold font-16 color-primary">{currency} {value}</h3>
             <ProductName className="fw-bold font-28">{name}</ProductName>
-            <ProductDetailNav />
             <DetailNavBar className="d-flex">
                 <DetailNavButton text={"Overview"} isActive={activeButton == "Overview"} onClick={() => updateNavBar("Overview")} />
                 <DetailNavButton text={"Features"} isActive={activeButton == "Features"} onClick={() => updateNavBar("Features")} />

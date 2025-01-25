@@ -4,12 +4,12 @@ import Header from "../../components/Header/Header";
 import NavBackButton from "../../components/Header/subcomponents/NavBackButton";
 import NavShoppingCartButton from "../../components/Header/subcomponents/NavShoppingCartButton";
 import ProductDetailHeader from "./components/ProductDetailHeader";
-import AddToCartButtton from "../../components/Button/AddToCartButtton";
+import PrimaryButton from "../../components/Button/PrimaryButton";
 import ProductOverview from "./components/ProductOverview/ProductOverview";
 import ProductFeatures from "./components/ProductFeatures/ProductFeatures";
 
 const ProductDetailPageComponent = styled.div`
-    &>*:not(.carousel, .cartButton, .renderedContainer) {
+    &>*:not(.carousel, .marginless, .renderedContainer) {
         margin-inline: 25px;
     }
 
@@ -51,7 +51,7 @@ function ProductDetailPage() {
             {activeButton === "Overview" ? <ProductOverview /> : null}
             {activeButton === "Features" ? <ProductFeatures /> : null}
 
-            <AddToCartButtton />
+            <PrimaryButton text="Add to cart" />
         </ProductDetailPageComponent>
     );
 }

@@ -1,7 +1,6 @@
-import { MoreVertical, Star } from "react-feather";
-import styled from "styled-components";
 import ProductItemReviews from "./subcomponents/ProductItemReviews";
 import ProductItemInfo from "./subcomponents/ProductItemInfo";
+import { ProductItemDescComponent } from "./styles";
 
 interface ProductItemDescProps {
     name: string
@@ -11,13 +10,9 @@ interface ProductItemDescProps {
     reviews: number
 }
 
-const ProductItemDescComponent = styled.div``;
-
-
-
 function ProductItemDesc({ name, currency, value, stars, reviews }: ProductItemDescProps) {
     return (
-        <ProductItemDescComponent className="d-flex flex-column w-100 gap-2 justify-content-between">
+        <ProductItemDescComponent>
             <ProductItemInfo name={name} currency={currency} value={value} />
             <ProductItemReviews stars={stars} reviews={reviews} />
         </ProductItemDescComponent>

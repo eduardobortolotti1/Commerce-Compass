@@ -6,8 +6,8 @@ interface ProductSearchResultImageProps {
 }
 
 const ProductItemImageComponent = styled.div`
-    width: 75px ;
-    height: 75px;
+    /* width: 75px ; */
+    /* height: 75px; */
     background-color: var(--grey-light-1);
     border-radius: 10px;
 
@@ -21,7 +21,7 @@ const ProductItemImageComponent = styled.div`
 
 function ProductItemImage({ imageUrl, name }: ProductSearchResultImageProps) {
     return (
-        <ProductItemImageComponent>
+        <ProductItemImageComponent className="d-flex justify-content-center align-items-center">
             <img src={imageUrl} alt={name} />
         </ProductItemImageComponent>
     );
