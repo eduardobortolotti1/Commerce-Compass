@@ -18,18 +18,20 @@ const ButtonInactive = styled.button`
 `;
 
 const ButtonActive = styled(ButtonInactive)`
-  color: var(--white);
-  background-color: var(--primary);
-  border-radius: 30px;
+  &.active {
+    color: var(--white);
+    background-color: var(--primary);
+    border-radius: 30px;
+  }
 `;
 
 // Child component
 function ProductNavBarButton({ text, isActive, onClick }: ButtonProps) {
-  return isActive ? (
-    <ButtonActive onClick={onClick}>{text}</ButtonActive>
-  ) : (
-    <ButtonInactive onClick={onClick}>{text}</ButtonInactive>
-  );
+  return (
+    <ButtonActive onClick={onClick} className={isActive ? "active" : ""}>
+      {text}
+    </ButtonActive>
+  )
 }
 
 export default ProductNavBarButton;

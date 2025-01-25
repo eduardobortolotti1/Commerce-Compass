@@ -7,14 +7,22 @@ const ProductNavComponent = styled.div`
   gap: 10px;
 `;
 
+interface ProductNavBarButtonProps {
+  updateFunction: (name: string) => void;
+}
+
 // Parent component
-function ProductNav() {
+function ProductNav({ updateFunction }: ProductNavBarButtonProps) {
   // State to track the active button
   const [activeButton, setActiveButton] = useState<string>("Headphone");
 
   // Function to update the active button
   function updateNavBar(name: string) {
+    // Updates the active button visually
     setActiveButton(name);
+
+    // Updates the parent component
+    updateFunction(name);
   }
 
   return (

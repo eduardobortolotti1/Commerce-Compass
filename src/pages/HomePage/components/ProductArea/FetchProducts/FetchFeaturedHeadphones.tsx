@@ -1,22 +1,25 @@
-import FeaturedProductItem from "./FeaturedProductItem";
-import Headphone from "@images/headphone.png"
+import FeaturedProductItem from "../FeaturedProductsArea/FeaturedProductItem";
 import Cables from "@images/cable.png"
-import ProductSwiper from "../../../../../components/ProductSwiper/ProductSwiper";
+import Headphone from "@images/headphone.png"
 import ProductSwiperStyle1 from "../../../../../components/ProductSwiper/ProductSwiperStyle1";
+import styled from "styled-components";
 
-interface FeaturedProductsAreaProps {
-    children?: React.ReactNode
-}
+const WrapperAnimationComponent = styled.div`
+    animation: fadeIn 1s ease forwards;
 
-function FeaturedProductsArea({ children }: FeaturedProductsAreaProps) {
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+         }
+    }
+`;
+
+function FetchFeaturedHeadphones() {
     return (
-        <>
-            <div className="d-flex justify-content-between">
-                <h2 className="font-16">
-                    Featured Products
-                </h2>
-                <a href="#see-all" className="text-decoration-none color-grey-dark-1">See all</a>
-            </div>
+        <WrapperAnimationComponent className="carousel">
             <ProductSwiperStyle1>
                 <FeaturedProductItem name={"TMA-2 HD Wireless"} imageUrl={Headphone} id={""} currency={"USD"} value={"350"} />
                 <FeaturedProductItem name={"C02 - Cable"} imageUrl={Cables} id={""} currency={"USD"} value={"25"} />
@@ -25,8 +28,8 @@ function FeaturedProductsArea({ children }: FeaturedProductsAreaProps) {
                 <FeaturedProductItem name={"TMA-2 HD Wireless"} imageUrl={Headphone} id={""} currency={"USD"} value={"350"} />
                 <FeaturedProductItem name={"C02 - Cable"} imageUrl={Cables} id={""} currency={"USD"} value={"25"} />
             </ProductSwiperStyle1>
-        </>
-    )
+        </WrapperAnimationComponent>
+    );
 }
 
-export default FeaturedProductsArea;
+export default FetchFeaturedHeadphones;

@@ -4,12 +4,13 @@
 // import HomePage from './pages/HomePage/HomePage'
 // import SearchPage from "./pages/SearchPage/SearchPage"
 // import MoreProductsPage from "./pages/MoreProductsPage/MoreProductsPage"
+import HomePage from "./pages/HomePage/HomePage"
 import ProductDetailPage from "./pages/ProductDetailPage/ProdutDetailPage"
 
 function App() {
   return (
     <div className="screen">
-      <ProductDetailPage />
+      <HomePage />
     </div>
   )
 }
