@@ -10,9 +10,10 @@ interface ProductSwiperProps {
     isFreeMode?: boolean; // Enable free mode
     children: React.ReactNode; // Allows single or multiple children
     style?: React.CSSProperties; // Style of the component
+    className: string
 }
 
-function ProductSwiper({ spaceBetween, slidesPerView, isFreeMode, children, style }: ProductSwiperProps) {
+function ProductSwiper({ spaceBetween, slidesPerView, isFreeMode, children, style, className }: ProductSwiperProps) {
     return (
         <div style={{ width: "100%", margin: "0 auto" }}>
             <Swiper
@@ -23,6 +24,7 @@ function ProductSwiper({ spaceBetween, slidesPerView, isFreeMode, children, styl
                 navigation={false}// Enable next/prev buttons
                 pagination={{ clickable: true }} // Enable pagination
                 style={style ? style : { paddingInline: 25 }}
+                className={className}
             >
                 {React.Children.toArray(children).map((child, index) => (
                     <SwiperSlide key={index}>{child}</SwiperSlide>

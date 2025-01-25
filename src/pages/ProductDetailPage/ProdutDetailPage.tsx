@@ -30,15 +30,13 @@ function ProductDetailPage() {
                 <NavShoppingCartButton />
             </Header>
             <ProductDetailHeader name="TMA-2 HD WIRELESS" currency={"USD"} value={350} />
-            <div className="carousel" style={{ marginBlock: "25px" }}>
-                <ProductSwiper spaceBetween={20} slidesPerView={1.1} >
-                    <ProductDetailImageItem imageUrl={HeadphoneBig} alt={"Image"} />
-                    <ProductDetailImageItem imageUrl={HeadphoneClose} alt={"Image"} />
-                    <ProductDetailImageItem imageUrl={HeadphoneBig} alt={"Image"} />
-                    <ProductDetailImageItem imageUrl={HeadphoneClose} alt={"Image"} />
-                    <ProductDetailImageItem imageUrl={HeadphoneBig} alt={"Image"} />
-                </ProductSwiper>
-            </div>
+            <ProductSwiper spaceBetween={20} slidesPerView={1.1} className="carousel" style={{ marginBlock: "25px", paddingInline: "25px" }}>
+                <ProductDetailImageItem imageUrl={HeadphoneBig} alt={"Image"} />
+                <ProductDetailImageItem imageUrl={HeadphoneClose} alt={"Image"} />
+                <ProductDetailImageItem imageUrl={HeadphoneBig} alt={"Image"} />
+                <ProductDetailImageItem imageUrl={HeadphoneClose} alt={"Image"} />
+                <ProductDetailImageItem imageUrl={HeadphoneBig} alt={"Image"} />
+            </ProductSwiper>
             <ProductReviewArea reviews={3}>
                 <ProductReviewItem profileUrl={"/123"} profileId={"123"} profilePicUrl={ProfilePicture} authorName={"Madelina"} stars={4} review={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."} />
                 <ProductReviewItem profileUrl={"/123"} profileId={"123"} profilePicUrl={ProfilePicture} authorName={"Irfan"} stars={5} review={"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."} />
