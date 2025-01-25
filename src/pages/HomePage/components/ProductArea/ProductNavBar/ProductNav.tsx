@@ -2,13 +2,13 @@ import styled from "styled-components";
 import ProductNavBarButton from "./ProductNavBarButton";
 import { useState } from "react";
 
-const ProductNavBarComponent = styled.div`
+const ProductNavComponent = styled.div`
   display: flex;
   gap: 10px;
 `;
 
 // Parent component
-function ProductNavBar() {
+function ProductNav() {
   // State to track the active button
   const [activeButton, setActiveButton] = useState<string>("Headphone");
 
@@ -18,7 +18,7 @@ function ProductNavBar() {
   }
 
   return (
-    <ProductNavBarComponent>
+    <ProductNavComponent>
       <ProductNavBarButton
         text="Headphone"
         isActive={activeButton === "Headphone"}
@@ -29,8 +29,8 @@ function ProductNavBar() {
         isActive={activeButton === "Headset"}
         onClick={() => updateNavBar("Headset")}
       />
-    </ProductNavBarComponent>
+    </ProductNavComponent>
   );
 }
 
-export default ProductNavBar;
+export default ProductNav;

@@ -3,20 +3,33 @@
 }
 
 body {
+    background-color: #E5E5E5 !important;
     font-family: Helvetica, sans-serif !important;
 }
 
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "DM Sans", Arial, Helvetica, sans-serif;
-  color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", Arial, Helvetica, sans-serif;
+    color: var(--text-color);
 }
 
 .screen {
     width: 100% !important;
     height: 100% !important;
+    background-color: var(--white);
+}
+
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--default)
 }

@@ -8,7 +8,7 @@ import Welcome from './components/Welcome/Welcome';
 import InputWithIcon from '../../components/InputWithIcon/InputWithIcon';
 import ProductSwiper from '../../components/ProductSwiper/ProductSwiper';
 import FeaturedProductsArea from './components/ProductArea/FeaturedProductsArea/FeaturedProductsArea';
-import ProductNavBar from './components/ProductArea/ProductNavBar/ProductNavBar';
+import ProductNav from './components/ProductArea/ProductNavBar/ProductNav';
 
 // Header subcomponents
 import NavLogo from '../../components/Header/subcomponents/NavLogo';
@@ -24,14 +24,14 @@ import FeaturedProductItem from './components/ProductArea/FeaturedProductsArea/F
 import ProductAreaContainer from './components/ProductArea/ProductAreaContainer';
 
 
-const Wrap = styled.div`
+const WrapperComponent = styled.div`
     margin: 0 25px 0 25px;
 `;
 
 function HomePage() {
     return (
         <>
-            <Wrap>
+            <WrapperComponent>
                 <Header>
                     <NavMenuButton />
                     <NavLogo />
@@ -39,9 +39,9 @@ function HomePage() {
                 </Header>
                 <Welcome />
                 <InputWithIcon icon={Search} placeholder='Search Headphone' />
-            </Wrap>
+            </WrapperComponent>
             <ProductAreaContainer>
-                <ProductNavBar />
+                <ProductNav />
                 <ProductSwiper>
                     <ProductBannerItem name={"TMA-2 Modular Headphone"} imageUrl={Headphone} id={''}></ProductBannerItem>
                     <ProductBannerItem name={"TMA-2 Modular Headphone"} imageUrl={Headphone} id={''}></ProductBannerItem>
