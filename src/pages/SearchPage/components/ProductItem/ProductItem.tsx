@@ -1,15 +1,11 @@
 import styled from "styled-components"
 import ProductItemDesc from "./ProductItemDesc"
 import ProductItemImage from "./ProductItemImage"
+import ProductItemProps from "../../../../types/product"
 
-interface ProductItemProps {
-    productId: string
-    imageUrl: string
-    name: string
-    currency: string
-    value: string
-    stars: string
-    reviews: string
+interface ProductSearchItemProps extends ProductItemProps {
+    stars: number
+    reviews: number
 }
 
 const ProductItemComponent = styled.div`
@@ -18,17 +14,18 @@ const ProductItemComponent = styled.div`
     transition: background-color 0.2s;
 
     &:hover {
-        cursor: pointer;
         background-color: var(--grey-light-1);
     }
 `;
 
-function ProductItem({ productId, imageUrl, name, currency, value, stars, reviews }: ProductItemProps) {
+function ProductItem({ productId, imageUrl, name, currency, value, stars, reviews }: ProductSearchItemProps) {
     return (
-        <ProductItemComponent className="d-flex w-100">
-            <ProductItemImage imageUrl={imageUrl} name={name} />
-            <ProductItemDesc name={name} currency={currency} value={value} stars={stars} reviews={reviews} />
-        </ProductItemComponent>
+        <a href={`#${productId}`} className="text-decoration-none">
+            <ProductItemComponent className="d-flex w-100">
+                <ProductItemImage imageUrl={imageUrl} name={name} />
+                <ProductItemDesc name={name} currency={currency} value={value} stars={stars} reviews={reviews} />
+            </ProductItemComponent>
+        </a>
     );
 }
 

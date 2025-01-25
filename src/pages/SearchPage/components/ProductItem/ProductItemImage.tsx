@@ -6,12 +6,14 @@ interface ProductSearchResultImageProps {
 }
 
 const ProductItemImageComponent = styled.div`
-    width: auto ;
+    width: 75px ;
     height: 75px;
     background-color: var(--grey-light-1);
     border-radius: 10px;
 
     img {
+        max-width: 75px;
+        max-height: auto;
         width: 75px;
         height: 75px;
     }

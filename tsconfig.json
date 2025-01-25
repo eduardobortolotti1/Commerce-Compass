@@ -15,6 +15,9 @@
       "@components/*": [
         "components/*"
       ],
+      "@types/*": [
+        "types/*"
+      ],
       "@icons/*": [
         "assets/icons/*"
       ],
