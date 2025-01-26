@@ -11,7 +11,6 @@ import CheckoutInfo from "./components/CheckoutInfo/CheckoutInfo";
 
 const ShoppingCartPageComponent = styled.div`
     padding-inline: 25px;
-    min-height: 100vh;
 `;
 
 const WrapperComponent = styled.div`

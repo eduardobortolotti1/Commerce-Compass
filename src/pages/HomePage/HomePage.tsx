@@ -35,7 +35,7 @@ function HomePage() {
     }
 
     return (
-        <>
+        <div>
             <WrapperComponent>
                 <Header>
                     <NavMenuButton />
@@ -53,7 +53,7 @@ function HomePage() {
                 {activeButton == "Headphone" ? <FetchFeaturedHeadphones /> : null}
                 {activeButton == "Headset" ? <FetchFeaturedHeadsets /> : null}
             </ProductAreaContainer>
-        </>
+        </div>
     )
 }
 

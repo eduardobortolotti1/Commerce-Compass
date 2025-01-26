@@ -4,7 +4,7 @@ import Intro from './components/Intro.tsx';
 
 function SignUpPage() {
     return (
-        <SignPage className="screen color-white text-center">
+        <SignPage className="text-center">
             <Intro />
             <SignUpForm />
         </SignPage>
