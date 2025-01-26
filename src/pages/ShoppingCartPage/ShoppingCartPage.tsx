@@ -42,7 +42,7 @@ function ShoppingCartPage() {
             </WrapperComponent>
             <TotalArea>
                 <CheckoutInfo />
-                <PrimaryButton text="Proceed to checkout" icon={ChevronRight}/>
+                <PrimaryButton text="Proceed to checkout" icon={ChevronRight} className="pt-3 pb-4"/>
             </TotalArea>
 
         </ShoppingCartPageComponent>

@@ -9,12 +9,12 @@ import ProductOverview from "./components/ProductOverview/ProductOverview";
 import ProductFeatures from "./components/ProductFeatures/ProductFeatures";
 
 const ProductDetailPageComponent = styled.div`
-    &>*:not(.carousel, .marginless, .renderedContainer) {
-        margin-inline: 25px;
+    &>*:not(.carousel, .renderedContainer) {
+        padding-inline: 25px;
     }
 
     &>.renderedContainer>:not(.carousel) {
-        margin-inline: 25px;        
+        padding-inline: 25px;        
     }
 
     .renderedContainer {
@@ -51,7 +51,7 @@ function ProductDetailPage() {
             {activeButton === "Overview" ? <ProductOverview /> : null}
             {activeButton === "Features" ? <ProductFeatures /> : null}
 
-            <PrimaryButton text="Add to cart" />
+            <PrimaryButton text="Add to cart" className="py-4"/>
         </ProductDetailPageComponent>
     );
 }
