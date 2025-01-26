@@ -14,15 +14,15 @@ const ButtonWrapper = styled.div`
 
 interface PrimaryButtonProps {
     text: string;
-    onClick?: () => void;
+    onClick?: (...args: any[]) => any;
     icon?: React.ElementType
     className?: string;
 }
 
 function PrimaryButton({ text, onClick, className, icon: IconComponent }: PrimaryButtonProps) {
     return (
-        <ButtonWrapper className={` ${className}`}>
-            <button onClick={onClick} className={`d-flex fw-bold ${IconComponent ? 'justify-content-between align-items-center font-14' : ''}`}>
+        <ButtonWrapper className={`${className}`}>
+            <button onClick={onClick} className={`d-flex fw-bold ${IconComponent ? 'justify-content-between align-items-center font-14' : 'justify-content-center'}`}>
                 {text}
                 {IconComponent && <IconComponent />}
             </button>

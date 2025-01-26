@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import Header from '../../components/Header/Header';
 import Welcome from './components/Welcome/Welcome';
 import InputWithIcon from '../../components/InputWithIcon/InputWithIcon';
-import ProductNav from './components/ProductArea/ProductNavBar/ProductNav';
+import ProductNav from './components/ProductArea/FilterNavBar/FilterNavBar';
 
 // Header subcomponents
 import NavLogo from '../../components/Header/subcomponents/NavLogo';
@@ -46,7 +46,7 @@ function HomePage() {
                 <InputWithIcon icon={Search} placeholder='Search Headphone' />
             </WrapperComponent>
             <ProductAreaContainer>
-                <ProductNav updateFunction={changeCategory} />
+                <ProductNav onClick={changeCategory} />
                 {activeButton == "Headphone" ? <FetchHeadphones /> : null}
                 {activeButton == "Headset" ? <FetchHeadsets /> : null}
                 <FeaturedProductsHeader />

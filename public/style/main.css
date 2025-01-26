@@ -21,6 +21,10 @@ body {
     width: 100% !important;
     height: 100% !important;
     background-color: var(--white);
+
+    &>div:first-of-type {
+        min-height: 100vh;
+    }
 }
 
 div,

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ProductNavBarButton from "./ProductNavBarButton";
+import ProductNavBarButton from "./FilterNavBarButton";
 import { useState } from "react";
 
 const ProductNavComponent = styled.div`
@@ -8,11 +8,11 @@ const ProductNavComponent = styled.div`
 `;
 
 interface ProductNavBarButtonProps {
-  updateFunction: (name: string) => void;
+  onClick: (name: string) => void;
 }
 
 // Parent component
-function ProductNav({ updateFunction }: ProductNavBarButtonProps) {
+function ProductNavBar({ onClick }: ProductNavBarButtonProps) {
   // State to track the active button
   const [activeButton, setActiveButton] = useState<string>("Headphone");
 
@@ -22,7 +22,7 @@ function ProductNav({ updateFunction }: ProductNavBarButtonProps) {
     setActiveButton(name);
 
     // Updates the parent component
-    updateFunction(name);
+    onClick(name);
   }
 
   return (
@@ -41,4 +41,4 @@ function ProductNav({ updateFunction }: ProductNavBarButtonProps) {
   );
 }
 
-export default ProductNav;
+export default ProductNavBar;
