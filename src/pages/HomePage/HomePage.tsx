@@ -21,6 +21,7 @@ import FeaturedProductsHeader from './components/ProductArea/FeaturedProductsAre
 import { useState } from 'react';
 import FetchBannerProducts from './components/ProductArea/FetchProducts/FetchBannerProducts';
 import { Category } from '../../types/category';
+import { useNavigate } from 'react-router-dom';
 
 const WrapperComponent = styled.div`
     margin: 0 25px 0 25px;
@@ -28,6 +29,11 @@ const WrapperComponent = styled.div`
 
 function HomePage() {
     const [activeButton, setActiveButton] = useState<Category>("Headphone");
+    const navigate = useNavigate();
+
+    const handleSearch = () => {
+        navigate('/search');
+    }
 
     function changeCategory(name: Category) {
         setActiveButton(name);
@@ -42,7 +48,7 @@ function HomePage() {
                     <NavUserIcon imageUrl={userIcon} />
                 </Header>
                 <Welcome />
-                <InputWithIcon icon={Search} placeholder='Search Headphone' />
+                <InputWithIcon icon={Search} placeholder='Search Headphone' onClick={handleSearch}/>
             </WrapperComponent>
             <ProductAreaContainer>
                 <ProductNav onClick={changeCategory} />

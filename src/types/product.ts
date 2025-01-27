@@ -1,7 +1,7 @@
 import { ProductReview } from "./review"
 
 export default interface ProductItemProps {
-    productId: string // short number id
+    id: string // short number id
     imageUrl: string
     name: string
     currency: string // Always USD
@@ -9,6 +9,8 @@ export default interface ProductItemProps {
 }
 
 export interface ProductItemDetail extends ProductItemProps {
+    postedDate: Date 
+    visitCount: number
     images: string[]
     reviews: ProductReview[]
     descriptionTitle: string // Use catchy terms like "The best headphones in the market"

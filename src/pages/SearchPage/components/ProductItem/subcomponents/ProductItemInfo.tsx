@@ -1,7 +1,7 @@
 interface ProductItemInfoProps {
     name: string
     currency: string
-    value: string
+    value: number
     productId?: string
 }
 

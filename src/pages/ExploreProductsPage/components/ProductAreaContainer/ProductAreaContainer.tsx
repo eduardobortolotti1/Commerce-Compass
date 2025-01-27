@@ -17,7 +17,7 @@ const ProductAreaContainerComponent = styled.div`
 
 function ProductAreaContainer({ children }: ProductAreaContainerProps) {
     return (
-        <ProductAreaContainerComponent>
+        <ProductAreaContainerComponent className="d-flex flex-wrap justify-content-center">
             {children}
         </ProductAreaContainerComponent>
     );

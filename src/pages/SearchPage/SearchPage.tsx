@@ -36,8 +36,8 @@ function SearchPage() {
                 <FetchSearchResults />
             </SearchResults>
             <PopularProducts>
-                <ProductItem productId="1337" imageUrl={Headphone} name={"TMA-2 Comfort Wireless "} currency={"USD"} value={"270"} stars={4.6} reviews={3} />
-                <ProductItem productId="1337" imageUrl={Headphone} name={"TMA-2 Comfort Wireless "} currency={"USD"} value={"270"} stars={4.6} reviews={3} />
+                <ProductItem productId="1337" imageUrl={Headphone} name={"TMA-2 Comfort Wireless "} currency={"USD"} value={270} stars={4.6} reviews={3} />
+                <ProductItem productId="1337" imageUrl={Headphone} name={"TMA-2 Comfort Wireless "} currency={"USD"} value={270} stars={4.6} reviews={3} />
             </PopularProducts>
         </SearchPageComponent>
     );

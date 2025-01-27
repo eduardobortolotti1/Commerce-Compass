@@ -5,12 +5,8 @@ import ProductReviewItem from "../ProductReviewArea/subcomponents/ProductReviewI
 import AnotherProductArea from "./AnotherProductArea";
 import ProductDetailImageItem from "./ProductDetailImageItem";
 import Headphone from "@images/headphone.png";
-import HeadphoneBig from "@images/headphone-big.png";
-import HeadphoneClose from "@images/headphone-close.png";
 import Cables from "@images/cable.png";
-import ProfilePicture from "@images/avatar_large.png";
 import { ProductItemDetail } from "../../../../types/product";
-import ProductsHeader from "../../../HomePage/components/ProductArea/FeaturedProductsArea/ProductsHeader";
 
 interface ProductOverviewProps {
     productItemDetail: ProductItemDetail
@@ -30,12 +26,12 @@ function ProductOverview({ productItemDetail }: ProductOverviewProps) {
                 })}
             </ProductReviewArea>
             <AnotherProductArea>
-                <FeaturedProductItem name={"TMA-2 HD Wireless"} imageUrl={Headphone} id={""} currency={"USD"} value={"350"} />
-                <FeaturedProductItem name={"C02 - Cable"} imageUrl={Cables} id={""} currency={"USD"} value={"25"} />
-                <FeaturedProductItem name={"TMA-2 HD Wireless"} imageUrl={Headphone} id={""} currency={"USD"} value={"350"} />
-                <FeaturedProductItem name={"C02 - Cable"} imageUrl={Cables} id={""} currency={"USD"} value={"25"} />
-                <FeaturedProductItem name={"TMA-2 HD Wireless"} imageUrl={Headphone} id={""} currency={"USD"} value={"350"} />
-                <FeaturedProductItem name={"C02 - Cable"} imageUrl={Cables} id={""} currency={"USD"} value={"25"} />
+                <FeaturedProductItem name={"TMA-2 HD Wireless"} imageUrl={Headphone} id={""} currency={"USD"} value={350} />
+                <FeaturedProductItem name={"C02 - Cable"} imageUrl={Cables} id={""} currency={"USD"} value={25} />
+                <FeaturedProductItem name={"TMA-2 HD Wireless"} imageUrl={Headphone} id={""} currency={"USD"} value={350} />
+                <FeaturedProductItem name={"C02 - Cable"} imageUrl={Cables} id={""} currency={"USD"} value={25} />
+                <FeaturedProductItem name={"TMA-2 HD Wireless"} imageUrl={Headphone} id={""} currency={"USD"} value={350} />
+                <FeaturedProductItem name={"C02 - Cable"} imageUrl={Cables} id={""} currency={"USD"} value={25} />
             </AnotherProductArea>
         </div>
     );

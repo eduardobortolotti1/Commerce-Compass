@@ -1,17 +1,50 @@
-// import './App.css'
-// import SignUpPage from './pages/SignPage/SignUpPage'
-// import SignInPage from './pages/SignPage/SignInPage'
-// import HomePage from './pages/HomePage/HomePage'
-// import SearchPage from "./pages/SearchPage/SearchPage"
-// import MoreProductsPage from "./pages/MoreProductsPage/MoreProductsPage"
-// import ProductDetailPage from "./pages/ProductDetailPage/ProdutDetailPage"
-import MoreProductsPage from "./pages/MoreProductsPage/MoreProductsPage"
-import ShoppingCartPage from "./pages/ShoppingCartPage/ShoppingCartPage"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+
+import HomePage from "./pages/HomePage/HomePage";
+import SearchPage from "./pages/SearchPage/SearchPage";
+import ShoppingCartPage from "./pages/ShoppingCartPage/ShoppingCartPage";
+import SignInPage from "./pages/SignPage/SignInPage";
+import SignUpPage from "./pages/SignPage/SignUpPage";
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
+import ProductDetailPage from "./pages/ProductDetailPage/ProdutDetailPage"
+import ExploreProductsPage from "./pages/ExploreProductsPage/ExploreProductsPage";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage />,
+    errorElement: <PageNotFound />
+  },
+  {
+    path: "/signIn",
+    element: <SignInPage />
+  },
+  {
+    path: "/signUp",
+    element: <SignUpPage />
+  },
+  {
+    path: "/search",
+    element: <SearchPage />
+  },
+  {
+    path: "/products",
+    element: <ExploreProductsPage />
+  },
+  {
+    path: "/cart",
+    element: <ShoppingCartPage />
+  },
+  {
+    path: "product/:id",
+    element: <ProductDetailPage />
+  }
+]);
 
 function App() {
   return (
     <div className="screen">
-      <MoreProductsPage />
+      <RouterProvider router={router} />
     </div>
   )
 }

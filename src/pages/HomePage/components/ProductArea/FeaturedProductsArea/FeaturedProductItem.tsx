@@ -1,9 +1,9 @@
 import styled from "styled-components"
 import FeaturedProductText from "./FeaturedProductText"
 import FeaturedProductImage from "./FeaturedProductImage"
+import { Link } from "react-router-dom"
 
-const FeaturedProductItemComponent = styled.div`
-    width: 45%;
+const FeaturedProductItemComponent = styled(Link)`
     background-color: var(--white);
     border-radius: 15px;
     transform-origin: center; /* Keeps the content centered */
@@ -24,11 +24,12 @@ interface ProductItemProps {
     value: number
     id: string
     children?: React.ReactNode
+    style?: React.CSSProperties
 }
 
-function FeaturedProductItem({ name, imageUrl, currency, value, id, children }: ProductItemProps) {
+function FeaturedProductItem({ name, imageUrl, currency, value, id, children, style }: ProductItemProps) {
     return (
-        <FeaturedProductItemComponent className="d-flex flex-column">
+        <FeaturedProductItemComponent to={`/product/${id}`} className="d-flex flex-column text-decoration-none" style={style}>
             <FeaturedProductImage>
                 <img src={imageUrl} alt={name} draggable={false} height="125px" />
             </FeaturedProductImage>

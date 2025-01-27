@@ -10,6 +10,8 @@ import ProductFeatures from "./components/ProductFeatures/ProductFeatures";
 import axios from "axios";
 import { ProductItemDetail } from "../../types/product";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
+import { useParams } from "react-router-dom";
+import PageNotFound from "../PageNotFound/PageNotFound";
 
 const ProductDetailPageComponent = styled.div`
     &>*:not(.carousel, .renderedContainer) {
@@ -38,14 +40,21 @@ function ProductDetailPage() {
     const [activeButton, setActiveButton] = useState<string>("Overview");
     const [productDetail, setProductDetail] = useState<ProductItemDetail | null>(null);
 
+    const productId = useParams<{id: string}>().id;
+    var url: string;
+    switch (productId) {
+        case '001': url = 'https://run.mocky.io/v3/33f8d270-60ae-4698-baa3-44e26a8ce927'; break;
+        case '002': url = 'https://run.mocky.io/v3/4fcb2b54-40e5-4fd1-a644-69e2f96a2e71'; break;
+        case '003': url = 'https://run.mocky.io/v3/457b734d-3936-4140-9a03-dbf679728ffd'; break;
+        default: return <PageNotFound />
+    }
     useEffect(() => {
         // Making the GET request to fetch product details
         axios
-            .get<ProductItemDetail>("https://run.mocky.io/v3/991b5924-1006-4968-ba3c-2ebc1731c6bf")
+            .get<ProductItemDetail>(url)
             .then((response) => {
                 // Successfully received the product data
                 setProductDetail(response.data);
-                console.log(response.data);
             })
             .catch((err) => {
                 // Handle error if the request fails

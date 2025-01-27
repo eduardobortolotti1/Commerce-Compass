@@ -7,11 +7,11 @@ interface ShoppingCartProductItemProps extends ProductItemProps {
     amount: number
 }
 
-function ShoppingCartProductItem({ productId, imageUrl, name, currency, value, amount }: ShoppingCartProductItemProps) {
+function ShoppingCartProductItem({ id, imageUrl, name, currency, value, amount }: ShoppingCartProductItemProps) {
     return (
         <ProductItemComponent>
             <ProductItemImage imageUrl={imageUrl} name={name} />
-            <ShoppingCartProductItemDesc productId={productId} name={name} currency={currency} value={value} amount={amount} />
+            <ShoppingCartProductItemDesc productId={id} name={name} currency={currency} value={value} amount={amount} />
         </ProductItemComponent>
     );
 }

@@ -6,7 +6,7 @@ interface ShoppingCartProductItemDescProps {
     productId: string
     name: string
     currency: string
-    value: string
+    value: number
     amount: number
 }
 

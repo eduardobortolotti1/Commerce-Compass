@@ -5,17 +5,22 @@ interface InputWithIconProps {
   placeholder: string;
   value?: any;
   onChange?: any;
+  onClick?: any;
 }
 
-function InputWithIcon({ icon: IconComponent, placeholder, value: useState, onChange }: InputWithIconProps) {
+function InputWithIcon({ icon: IconComponent, placeholder, value: useState, onChange, onClick }: InputWithIconProps) {
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     onChange(event.target.value);
+  }
+
+  function handleClick() {
+    onClick();
   }
 
   return (
     <Wrap>
       <IconComponent /> {/* Render the icon component */}
-      <SearchBarComponent placeholder={placeholder} value={useState} onChange={handleChange} />
+      <SearchBarComponent placeholder={placeholder} value={useState} onChange={handleChange} onClick={handleClick} />
     </Wrap>
   );
 }
