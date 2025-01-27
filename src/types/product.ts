@@ -16,3 +16,7 @@ export interface ProductItemDetail extends ProductItemProps {
     description_section2: string // one paragraph only
 }
 
+export interface ProductItemSearch extends ProductItemProps {
+    stars: number
+    reviews: number
+}

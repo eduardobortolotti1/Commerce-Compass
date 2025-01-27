@@ -5,12 +5,13 @@
 // import SearchPage from "./pages/SearchPage/SearchPage"
 // import MoreProductsPage from "./pages/MoreProductsPage/MoreProductsPage"
 // import ProductDetailPage from "./pages/ProductDetailPage/ProdutDetailPage"
+import MoreProductsPage from "./pages/MoreProductsPage/MoreProductsPage"
 import ShoppingCartPage from "./pages/ShoppingCartPage/ShoppingCartPage"
 
 function App() {
   return (
     <div className="screen">
-      <ShoppingCartPage />
+      <MoreProductsPage />
     </div>
   )
 }

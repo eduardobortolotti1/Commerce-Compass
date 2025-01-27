@@ -3,7 +3,7 @@ import FeaturedProductText from "./FeaturedProductText"
 import FeaturedProductImage from "./FeaturedProductImage"
 
 const FeaturedProductItemComponent = styled.div`
-    width: 100%;
+    width: 45%;
     background-color: var(--white);
     border-radius: 15px;
     transform-origin: center; /* Keeps the content centered */
@@ -13,7 +13,7 @@ const FeaturedProductItemComponent = styled.div`
 
     &:hover {
         cursor: pointer;
-        background-color: var(--grey-light-1);
+        background-color: var(--primary-light);
     }
 `
 
@@ -21,7 +21,7 @@ interface ProductItemProps {
     name: string
     imageUrl: string
     currency: string
-    value: string
+    value: number
     id: string
     children?: React.ReactNode
 }

@@ -7,12 +7,36 @@ import ProductItemReviews from "../SearchPage/components/ProductItem/subcomponen
 import ProductAreaContainer from "./components/ProductAreaContainer/ProductAreaContainer";
 import ProductHeader from "./components/ProductHeader/ProductHeader";
 import Headphone from "@images/headphone.png";
+import { useEffect, useState } from "react";
+import { ProductItemSearch } from "../../types/product";
+import axios from "axios";
+import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
 
 const WrapperComponent = styled.div`
     padding-inline: 25px;
 `;
 
 function MoreProductsPage() {
+    const [products, setProducts] = useState<ProductItemSearch[]>([])
+
+    useEffect(() => {
+        // Making the GET request to fetch product details
+        axios
+            .get<ProductItemSearch[]>("https://run.mocky.io/v3/f4dbe840-197d-4c95-b297-915d2fc36058")
+            .then((response) => {
+                // Successfully received the product data
+                setProducts(response.data);
+            })
+            .catch((err) => {
+                // Handle error if the request fails
+                console.error(err);
+            });
+    }, []);
+
+    if (products.length === 0) {
+        return <LoadingScreen />;
+    }
+
     return (
         <div>
             <WrapperComponent>
@@ -23,30 +47,13 @@ function MoreProductsPage() {
                 <ProductHeader />
             </WrapperComponent>
             <ProductAreaContainer>
-                <FeaturedProductItem name={"TMA-2 HD Wireless"} imageUrl={Headphone} id={""} currency={"USD"} value={"350"}>
-                    <ProductItemReviews stars={4.5} reviews={4} />
-                </FeaturedProductItem>
-                <FeaturedProductItem name={"TMA-2 HD Wireless"} imageUrl={Headphone} id={""} currency={"USD"} value={"350"}>
-                    <ProductItemReviews stars={4.5} reviews={4} />
-                </FeaturedProductItem>
-                <FeaturedProductItem name={"TMA-2 HD Wireless"} imageUrl={Headphone} id={""} currency={"USD"} value={"350"}>
-                    <ProductItemReviews stars={4.5} reviews={4} />
-                </FeaturedProductItem>
-                <FeaturedProductItem name={"TMA-2 HD Wireless"} imageUrl={Headphone} id={""} currency={"USD"} value={"350"}>
-                    <ProductItemReviews stars={4.5} reviews={4} />
-                </FeaturedProductItem>
-                <FeaturedProductItem name={"TMA-2 HD Wireless"} imageUrl={Headphone} id={""} currency={"USD"} value={"350"}>
-                    <ProductItemReviews stars={4.5} reviews={4} />
-                </FeaturedProductItem>
-                <FeaturedProductItem name={"TMA-2 HD Wireless"} imageUrl={Headphone} id={""} currency={"USD"} value={"350"}>
-                    <ProductItemReviews stars={4.5} reviews={4} />
-                </FeaturedProductItem>
-                <FeaturedProductItem name={"TMA-2 HD Wireless"} imageUrl={Headphone} id={""} currency={"USD"} value={"350"}>
-                    <ProductItemReviews stars={4.5} reviews={4} />
-                </FeaturedProductItem>
-                <FeaturedProductItem name={"TMA-2 HD Wireless"} imageUrl={Headphone} id={""} currency={"USD"} value={"350"}>
-                    <ProductItemReviews stars={4.5} reviews={4} />
-                </FeaturedProductItem>
+                {products.map((product, index) => {
+                    return (
+                        <FeaturedProductItem key={index} name={product.name} imageUrl={product.imageUrl} id={product.productId} currency={product.currency} value={product.value}>
+                            <ProductItemReviews stars={product.stars} reviews={product.reviews} />
+                        </FeaturedProductItem>
+                    );
+                })}
             </ProductAreaContainer>
         </div>
     );
