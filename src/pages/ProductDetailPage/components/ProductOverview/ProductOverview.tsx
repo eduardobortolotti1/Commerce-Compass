@@ -9,21 +9,25 @@ import HeadphoneBig from "@images/headphone-big.png";
 import HeadphoneClose from "@images/headphone-close.png";
 import Cables from "@images/cable.png";
 import ProfilePicture from "@images/avatar_large.png";
+import { ProductItemDetail } from "../../../../types/product";
+import ProductsHeader from "../../../HomePage/components/ProductArea/FeaturedProductsArea/ProductsHeader";
 
-function ProductOverview() {
+interface ProductOverviewProps {
+    productItemDetail: ProductItemDetail
+}
+
+function ProductOverview({ productItemDetail }: ProductOverviewProps) {
     return (
-        <div className="renderedContainer">
-            <ProductSwiper spaceBetween={20} slidesPerView={1.1} className="carousel" style={{ marginBlockEnd: "25px", paddingInline: "25px" }}>
-                <ProductDetailImageItem imageUrl={HeadphoneBig} alt={"Image"} />
-                <ProductDetailImageItem imageUrl={HeadphoneClose} alt={"Image"} />
-                <ProductDetailImageItem imageUrl={HeadphoneBig} alt={"Image"} />
-                <ProductDetailImageItem imageUrl={HeadphoneClose} alt={"Image"} />
-                <ProductDetailImageItem imageUrl={HeadphoneBig} alt={"Image"} />
+        <div className="renderedContainer ">
+            <ProductSwiper spaceBetween={20} slidesPerView={1.1} style={{ marginBlockEnd: "25px", paddingInline: "25px" }}>
+                {productItemDetail.images.map((imageUrl, index) => {
+                    return <ProductDetailImageItem key={index} imageUrl={imageUrl} alt={"Image"} />
+                })}
             </ProductSwiper>
-            <ProductReviewArea reviews={3}>
-                <ProductReviewItem profileUrl={"/123"} profileId={"123"} profilePicUrl={ProfilePicture} authorName={"Madelina"} stars={4} review={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."} />
-                <ProductReviewItem profileUrl={"/123"} profileId={"123"} profilePicUrl={ProfilePicture} authorName={"Irfan"} stars={5} review={"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."} />
-                <ProductReviewItem profileUrl={"/123"} profileId={"123"} profilePicUrl={ProfilePicture} authorName={"Ravi Putra"} stars={5} review={"Excepteur sint occaecat cupidatat non proident"} />
+            <ProductReviewArea reviews={productItemDetail.reviews.length}>
+                {productItemDetail.reviews.map((productReview, index) => {
+                    return <ProductReviewItem key={index} productReview={productReview} />
+                })}
             </ProductReviewArea>
             <AnotherProductArea>
                 <FeaturedProductItem name={"TMA-2 HD Wireless"} imageUrl={Headphone} id={""} currency={"USD"} value={"350"} />

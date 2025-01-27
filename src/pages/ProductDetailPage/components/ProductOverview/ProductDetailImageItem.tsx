@@ -6,13 +6,17 @@ interface ProductDetailImageItemProps {
 }
 
 const ProductDetailImageItemComponent = styled.div`
+    border-radius: 10px;
+    background-color: var(--grey-light-1);
     height: 400px;
 
     img {
         border-radius: 10px;
+        max-width: 100%;
+        max-height: 100%;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
     }
 `;
 

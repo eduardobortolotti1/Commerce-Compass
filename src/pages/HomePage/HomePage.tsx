@@ -16,12 +16,9 @@ import NavUserIcon from '../../components/Header/subcomponents/NavUserIcon';
 // Assets
 import userIcon from '@images/avatar_small.png';
 import ProductAreaContainer from './components/ProductArea/ProductAreaContainer';
-import FetchHeadphones from './components/ProductArea/FetchProducts/FetchHeadphones';
 import FetchFeaturedHeadphones from './components/ProductArea/FetchProducts/FetchFeaturedHeadphones';
-import FeaturedProductsHeader from './components/ProductArea/FeaturedProductsArea/FeaturedProductsHeader';
+import FeaturedProductsHeader from './components/ProductArea/FeaturedProductsArea/ProductsHeader';
 import { useState } from 'react';
-import FetchHeadsets from './components/ProductArea/FetchProducts/FetchHeadsets';
-import FetchFeaturedHeadsets from './components/ProductArea/FetchProducts/FetchFeaturedHeadsets';
 import FetchBannerProducts from './components/ProductArea/FetchProducts/FetchBannerProducts';
 import { Category } from '../../types/category';
 
@@ -50,7 +47,7 @@ function HomePage() {
             <ProductAreaContainer>
                 <ProductNav onClick={changeCategory} />
                 <FetchBannerProducts category={activeButton} />
-                <FeaturedProductsHeader />
+                <FeaturedProductsHeader text='Featured Products'/>
                 <FetchFeaturedHeadphones />
             </ProductAreaContainer>
         </div>

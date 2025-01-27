@@ -15,7 +15,7 @@ interface ProductSwiperProps {
 
 function ProductSwiper({ spaceBetween, slidesPerView, isFreeMode, children, style, className }: ProductSwiperProps) {
     return (
-        <div style={{ width: "100%", margin: "0 auto" }}>
+        <div style={{ width: "100%", margin: "0 auto" }} className="carousel">
             <Swiper
                 modules={isFreeMode ? [FreeMode] : []}
                 freeMode={isFreeMode} // Enable free mode

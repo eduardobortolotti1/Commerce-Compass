@@ -1,25 +1,21 @@
 import styled from "styled-components";
 import ReviewItemImage from "./ReviewItemImage";
 import ReviewItemContent from "./ReviewItemContent";
+import { ProductReview } from "../../../../../types/review";
 
 interface ProductReviewItemProps {
-    profileUrl: string;
-    profileId: string;
-    profilePicUrl: string;
-    authorName: string;
-    stars: number;
-    review: string;
+    productReview: ProductReview;
 }
 
 const ProductReviewItemComponent = styled.div`
     gap: 15px;
 `;
 
-function ProductReviewItem({ profilePicUrl, profileId, authorName, stars, review }: ProductReviewItemProps) {
+function ProductReviewItem({ productReview }: ProductReviewItemProps) {
     return (
         <ProductReviewItemComponent className="d-flex flex-row">
-            <ReviewItemImage profilePicUrl={profilePicUrl} profileId={profileId} />
-            <ReviewItemContent authorName={authorName} stars={stars} review={review} />
+            <ReviewItemImage profilePicUrl={productReview.profileImageUrl} profileId={''} />
+            <ReviewItemContent authorName={productReview.authorName} stars={productReview.stars} review={productReview.review} />
         </ProductReviewItemComponent>
     );
 }

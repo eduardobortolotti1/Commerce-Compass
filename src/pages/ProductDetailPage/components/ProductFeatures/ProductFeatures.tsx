@@ -1,11 +1,15 @@
+import { ProductItemDetail } from "../../../../types/product";
 
-function ProductFeatures() {
+interface ProductFeaturesProps {
+    productItemDetail: ProductItemDetail;
+}
+
+function ProductFeatures({ productItemDetail }: ProductFeaturesProps) {
     return (
         <div className="renderedContainer">
-            <h3 className="font-16 fw-bold">Highly Detailed Audio</h3>
-            <p className="fw-14">The speaker unit contains a diaphragm that is precision-grown from NAC Audio bio-cellulose, making it stiffer, lighter and stronger than regular PET speaker units, and allowing the sound-producing diaphragm to vibrate without the levels of distortion found in other speakers. </p>
-            <p className="fw-14">The speaker unit contains a diaphragm that is precision-grown from NAC Audio bio-cellulose, making it stiffer, lighter and stronger than regular PET speaker units, and allowing the sound-producing diaphragm to vibrate without the levels of distortion found in other speakers. </p>
-
+            <h3 className="font-16 fw-bold">{productItemDetail.descriptionTitle}</h3>
+            <p className="fw-14">{productItemDetail.description_section1}</p>
+            <p className="fw-14">{productItemDetail.description_section2}</p>
         </div>
     );
 }

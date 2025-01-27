@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ProductSwiperStyle1 from "../../../../components/ProductSwiper/ProductSwiperStyle1";
+import ProductsHeader from "../../../HomePage/components/ProductArea/FeaturedProductsArea/ProductsHeader";
 
 interface AnotherProductAreaProps {
     children?: React.ReactNode;
@@ -13,6 +14,9 @@ const AnotherProductAreaComponent = styled.div`
 function AnotherProductArea({ children, }: AnotherProductAreaProps) {
     return (
         <AnotherProductAreaComponent className="carousel">
+            <div className="px-4 mb-3">
+                <ProductsHeader text="Another Product" />
+            </div>
             <ProductSwiperStyle1>
                 {children}
             </ProductSwiperStyle1>
