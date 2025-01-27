@@ -9,12 +9,12 @@ import ProductHeader from "./components/ProductHeader/ProductHeader";
 import Headphone from "@images/headphone.png";
 
 const WrapperComponent = styled.div`
-    padding: 25px;
+    padding-inline: 25px;
 `;
 
 function MoreProductsPage() {
     return (
-        <>
+        <div>
             <WrapperComponent>
                 <Header>
                     <NavBackButton />
@@ -48,7 +48,7 @@ function MoreProductsPage() {
                     <ProductItemReviews stars={4.5} reviews={4} />
                 </FeaturedProductItem>
             </ProductAreaContainer>
-        </>
+        </div>
     );
 }
 

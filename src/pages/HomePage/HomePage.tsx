@@ -22,15 +22,17 @@ import FeaturedProductsHeader from './components/ProductArea/FeaturedProductsAre
 import { useState } from 'react';
 import FetchHeadsets from './components/ProductArea/FetchProducts/FetchHeadsets';
 import FetchFeaturedHeadsets from './components/ProductArea/FetchProducts/FetchFeaturedHeadsets';
+import FetchBannerProducts from './components/ProductArea/FetchProducts/FetchBannerProducts';
+import { Category } from '../../types/category';
 
 const WrapperComponent = styled.div`
     margin: 0 25px 0 25px;
 `;
 
 function HomePage() {
-    const [activeButton, setActiveButton] = useState<string>("Headphone");
+    const [activeButton, setActiveButton] = useState<Category>("Headphone");
 
-    function changeCategory(name: string) {
+    function changeCategory(name: Category) {
         setActiveButton(name);
     }
 
@@ -47,11 +49,9 @@ function HomePage() {
             </WrapperComponent>
             <ProductAreaContainer>
                 <ProductNav onClick={changeCategory} />
-                {activeButton == "Headphone" ? <FetchHeadphones /> : null}
-                {activeButton == "Headset" ? <FetchHeadsets /> : null}
+                <FetchBannerProducts category={activeButton} />
                 <FeaturedProductsHeader />
-                {activeButton == "Headphone" ? <FetchFeaturedHeadphones /> : null}
-                {activeButton == "Headset" ? <FetchFeaturedHeadsets /> : null}
+                <FetchFeaturedHeadphones />
             </ProductAreaContainer>
         </div>
     )

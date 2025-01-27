@@ -10,6 +10,11 @@ const FeaturedProductItemComponent = styled.div`
     padding: 15px 10px 15px 10px;
     min-height: 215px;
     gap: 20px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--grey-light-1);
+    }
 `
 
 interface ProductItemProps {
