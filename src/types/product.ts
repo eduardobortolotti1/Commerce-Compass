@@ -9,8 +9,6 @@ export default interface ProductItemProps {
 }
 
 export interface ProductItemDetail extends ProductItemProps {
-    postedDate: Date 
-    visitCount: number
     images: string[]
     reviews: ProductReview[]
     descriptionTitle: string // Use catchy terms like "The best headphones in the market"
@@ -21,4 +19,6 @@ export interface ProductItemDetail extends ProductItemProps {
 export interface ProductItemSearch extends ProductItemProps {
     stars: number
     reviews: number
+    postedDate: Date 
+    visitCount: number
 }

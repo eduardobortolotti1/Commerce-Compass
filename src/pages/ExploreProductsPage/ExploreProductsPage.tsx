@@ -25,7 +25,6 @@ function ExploreProductsPage() {
             .then((response) => {
                 // Successfully received the product data
                 setProducts(response.data);
-                console.log(response.data)
             })
             .catch((err) => {
                 // Handle error if the request fails
@@ -49,7 +48,7 @@ function ExploreProductsPage() {
             <ProductAreaContainer>
                 {products.map((product, index) => {
                     return (
-                        <FeaturedProductItem key={index} name={product.name} imageUrl={product.imageUrl} id={product.id} currency={product.currency} value={product.value} style={{ width: "45%" }}>
+                        <FeaturedProductItem key={index} name={product.name} imageUrl={product.imageUrl} id={product.id} currency={product.currency} value={product.value} postedDate={product.postedDate} visitCount={product.visitCount} style={{ width: "45%" }}>
                             <ProductItemReviews stars={product.stars} reviews={product.reviews} />
                         </FeaturedProductItem>
                     );

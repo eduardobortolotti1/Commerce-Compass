@@ -25,6 +25,8 @@ interface ProductItemProps {
     id: string
     children?: React.ReactNode
     style?: React.CSSProperties
+    postedDate?: Date
+    visitCount?: number
 }
 
 function FeaturedProductItem({ name, imageUrl, currency, value, id, children, style }: ProductItemProps) {

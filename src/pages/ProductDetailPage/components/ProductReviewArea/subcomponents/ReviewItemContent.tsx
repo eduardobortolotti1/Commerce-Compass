@@ -37,9 +37,9 @@ function ReviewItemContent({ authorName, stars, review }: ReviewItemContentProps
 }
 
 function renderStars(stars: number) {
-    return Array.from({ length: stars }).map((_, index) => (
-        <FullStar key={index} />
-    ));
+    return Array.from({ length: 5 }, (_, index) =>
+        index < stars ? <FullStar key={index} /> : <EmptyStar key={index} />
+    );
 }
 
 export default ReviewItemContent;
