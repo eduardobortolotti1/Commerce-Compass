@@ -2,8 +2,7 @@ import styled from "styled-components";
 import ButtonContainer from "../ButtonContainer";
 import SortButton from "./SortButton";
 import React from "react";
-import { SortBy } from "../../../types/sortby";
-
+import { SortBy } from "../../../../../../types/sortby";
 interface SortSelectorProps {
     updateFunction: (sortBy: SortBy) => void;
 }

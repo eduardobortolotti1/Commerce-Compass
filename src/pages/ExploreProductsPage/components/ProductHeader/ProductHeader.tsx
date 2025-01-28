@@ -9,15 +9,18 @@ const ProductHeaderComponent = styled.div`
     margin-block-end: 35px;
 `;
 
+interface ProductHeaderProps {
+    onClick: () => void;
+}
 
-function ProductHeader() {
+function ProductHeader({ onClick }: ProductHeaderProps) {
     return (
         <ProductHeaderComponent>
             <ProductPresentation>
                 <h3 className="font-16">Headphone</h3>
                 <h2 className="font-24 montserrat fw-bold">TMA Wireless</h2>
             </ProductPresentation>
-            <FilterButton />
+            <FilterButton onClick={onClick} />
         </ProductHeaderComponent>
     );
 }

@@ -8,9 +8,17 @@ const FilterButtonComponent = styled.button`
     color: black;
 `;
 
-function FilterButton() {
+interface FilterButtonProps {
+    onClick: () => void;
+}
+
+function FilterButton({ onClick }: FilterButtonProps) {
+    function handleClick() {
+        onClick();
+    }
+
     return (
-        <FilterButtonComponent className="d-flex justify-content-center align-items-center gap-2 w-100">
+        <FilterButtonComponent onClick={handleClick} className="d-flex justify-content-center align-items-center gap-2 w-100">
             <Sliders />
             Filter
         </FilterButtonComponent>

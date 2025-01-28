@@ -10,6 +10,8 @@ import { useEffect, useState } from "react";
 import { ProductItemSearch } from "../../types/product";
 import axios from "axios";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen";
+import { Sheet } from "react-modal-sheet";
+import FilterDrawer from "./components/FilterDrawer/FilterDrawer";
 
 const WrapperComponent = styled.div`
     padding-inline: 25px;
@@ -17,6 +19,8 @@ const WrapperComponent = styled.div`
 
 function ExploreProductsPage() {
     const [products, setProducts] = useState<ProductItemSearch[]>([])
+    // Bottom sheet drawer state
+    const [isOpen, setOpen] = useState(false);
 
     useEffect(() => {
         // Making the GET request to fetch product details
@@ -38,12 +42,13 @@ function ExploreProductsPage() {
 
     return (
         <div>
+            <FilterDrawer isOpen={isOpen} setOpen={setOpen} />
             <WrapperComponent>
                 <Header>
                     <NavBackButton />
                     <NavShoppingCartButton amountInCart={2} />
                 </Header>
-                <ProductHeader />
+                <ProductHeader onClick={() => setOpen(true)} />
             </WrapperComponent>
             <ProductAreaContainer>
                 {products.map((product, index) => {

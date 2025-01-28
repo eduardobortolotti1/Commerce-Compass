@@ -1,8 +1,7 @@
-import styled from "styled-components";
 import ButtonContainer from "../ButtonContainer";
 import CategoryButton from "./CategoryButton";
 import React from "react";
-import { Category } from "../../../types/category";
+import { Category } from "../../../../../../types/category";
 
 interface CategorySelectorProps {
     updateFunction: (category: Category) => void;
