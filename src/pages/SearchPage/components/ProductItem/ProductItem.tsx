@@ -8,9 +8,9 @@ interface ProductSearchItemProps extends ProductItemProps {
     reviews: number
 }
 
-function ProductItem({ productId, imageUrl, name, currency, value, stars, reviews }: ProductSearchItemProps) {
+function ProductItem({ id, imageUrl, name, currency, value, stars, reviews }: ProductSearchItemProps) {
     return (
-        <a href={`#${productId}`} className="text-decoration-none">
+        <a href={`#${id}`} className="text-decoration-none">
             <ProductItemComponent>
                 <ProductItemImage imageUrl={imageUrl} name={name} />
                 <ProductItemDesc name={name} currency={currency} value={value} stars={stars} reviews={reviews} />

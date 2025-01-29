@@ -35,8 +35,8 @@ function ShoppingCartPage() {
                     <NavTrashButton />
                 </Header>
                 <ShoppingCartProducts className="d-flex flex-column">
-                    <ShoppingCartProductItem productId="1337" imageUrl={Headphone} name={"TMA-2 Comfort Wireless "} currency={"USD"} value={"270"} amount={1} />
-                    <ShoppingCartProductItem productId="1337" imageUrl={Headphone} name={"TMA-2 Comfort Wireless "} currency={"USD"} value={"270"} amount={1} />
+                    <ShoppingCartProductItem id={"1337"} imageUrl={Headphone} name={"TMA-2 Comfort Wireless "} currency={"USD"} value={270} amount={1} />
+                    <ShoppingCartProductItem id={"1337"} imageUrl={Headphone} name={"TMA-2 Comfort Wireless "} currency={"USD"} value={270} amount={1} />
                 </ShoppingCartProducts>
             </WrapperComponent>
             <TotalArea>

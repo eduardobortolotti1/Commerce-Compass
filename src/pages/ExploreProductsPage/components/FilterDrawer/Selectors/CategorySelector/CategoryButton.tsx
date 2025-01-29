@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Category } from "../../../types/category";
+import { Category } from "../../../../../../types/category";
 
 const CategoryButtonComponent = styled.button`
     padding-inline: 15px;

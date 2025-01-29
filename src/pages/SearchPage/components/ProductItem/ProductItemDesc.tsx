@@ -5,7 +5,7 @@ import { ProductItemDescComponent } from "./styles";
 interface ProductItemDescProps {
     name: string
     currency: string
-    value: string
+    value: number
     stars: number
     reviews: number
 }

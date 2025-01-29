@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SortBy } from "../../../types/sortby";
+import { SortBy } from "../../../../../../types/sortby";
 
 const SortButtonComponent = styled.button`
     padding-inline: 15px;

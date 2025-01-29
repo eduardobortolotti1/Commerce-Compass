@@ -54,7 +54,6 @@ function FetchBannerProducts({ category }: FetchBannerProductsProps) {
                             key={product.name}
                             name={product.name}
                             imageUrl={product.imageUrl}
-                            id={''}
                         />
                     ))}
                 </ProductSwiper>
