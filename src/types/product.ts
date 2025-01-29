@@ -1,3 +1,4 @@
+import { Category } from "./category"
 import { ProductReview } from "./review"
 
 export default interface ProductItemProps {
@@ -17,6 +18,7 @@ export interface ProductItemDetail extends ProductItemProps {
 }
 
 export interface ProductItemSearch extends ProductItemProps {
+    category: Category
     stars: number
     reviews: number
     postedDate: Date 

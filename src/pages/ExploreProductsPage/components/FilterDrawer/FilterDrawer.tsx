@@ -7,11 +7,18 @@ import PrimaryButton from "../../../../components/Button/PrimaryButton";
 import DrawerHeader from "../../../../components/Drawers/FilterDrawer/components/DrawerHeader";
 import CategorySelector from "./Selectors/CategorySelector/CategorySelector";
 import SortSelector from "./Selectors/SortSelector/SortSelector";
+import Filter from "../../../../types/filter";
 
 interface FilterDrawerProps {
     isOpen: boolean;
     setOpen: (value: boolean) => void;
+    activeCategory: Category;
+    setActiveCategory: (category: Category) => void;
+    activeSortBy: SortBy;
+    setActiveSortBy: (sortBy: SortBy) => void;
+    onApplyFilter: (filter: Filter) => void;
 }
+
 
 const FilterDrawerComponent = styled.div`
     padding: 25px 25px 30px 25px;
@@ -22,21 +29,17 @@ const FilterDrawerComponent = styled.div`
     border-top-right-radius: 30px;
 `;
 
-function FilterDrawer({ isOpen, setOpen }: FilterDrawerProps) {
-    const [activeCategory, setActiveCategory] = React.useState<Category>("Headphone");
-    const [activeSortBy, setActiveSortBy] = React.useState<SortBy>("Popularity");
-    const [activeFilter, setActiveFilter] = React.useState({ category: activeCategory, sortBy: activeSortBy });
-
+function FilterDrawer({ isOpen, setOpen, activeCategory, setActiveCategory, activeSortBy, setActiveSortBy, onApplyFilter }: FilterDrawerProps) {
     function handleCategoryClick(category: Category) {
         setActiveCategory(category);
-        setActiveFilter({ category: category, sortBy: activeSortBy });
+        console.log(category);
     }
     function handleSortByClick(sortBy: SortBy) {
         setActiveSortBy(sortBy);
-        setActiveFilter({ category: activeCategory, sortBy: sortBy });
+        console.log(sortBy);
     }
     function handleApplyFilter() {
-        setActiveFilter({ category: activeCategory, sortBy: activeSortBy });
+        onApplyFilter({ category: activeCategory, sortBy: activeSortBy });
     }
 
     return (
