@@ -4,13 +4,18 @@ import SortButton from "./SortButton";
 import React from "react";
 import { SortBy } from "../../../../../../types/sortby";
 interface SortSelectorProps {
-    updateFunction: (sortBy: SortBy) => void;
+    updateFunction: (sortBy: SortBy | undefined) => void;
 }
 
 function SortSelector({ updateFunction }: SortSelectorProps) {
-    const [activeCategory, setActiveCategory] = React.useState<SortBy>("Popularity");
+    const [activeCategory, setActiveCategory] = React.useState<SortBy | undefined>("Popularity");
 
     function handleSortByClick(category: SortBy) {
+        if (activeCategory === category) {
+            setActiveCategory(undefined);
+            updateFunction(undefined);
+            return;
+        }
         setActiveCategory(category);
         updateFunction(category);
     }

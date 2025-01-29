@@ -1,4 +1,3 @@
-import React from "react";
 import { Sheet } from "react-modal-sheet";
 import styled from "styled-components";
 import { Category } from "../../../../types/category";
@@ -7,16 +6,15 @@ import PrimaryButton from "../../../../components/Button/PrimaryButton";
 import DrawerHeader from "../../../../components/Drawers/FilterDrawer/components/DrawerHeader";
 import CategorySelector from "./Selectors/CategorySelector/CategorySelector";
 import SortSelector from "./Selectors/SortSelector/SortSelector";
-import Filter from "../../../../types/filter";
 
 interface FilterDrawerProps {
     isOpen: boolean;
     setOpen: (value: boolean) => void;
-    activeCategory: Category;
-    setActiveCategory: (category: Category) => void;
-    activeSortBy: SortBy;
-    setActiveSortBy: (sortBy: SortBy) => void;
-    onApplyFilter: (filter: Filter) => void;
+    activeCategory: Category | undefined;
+    setActiveCategory: (category: Category | undefined) => void;
+    activeSortBy: SortBy | undefined;
+    setActiveSortBy: (sortBy: SortBy | undefined) => void;
+    onApplyFilter: (category: (Category | undefined), sortBy: (SortBy | undefined)) => void;
 }
 
 
@@ -30,16 +28,16 @@ const FilterDrawerComponent = styled.div`
 `;
 
 function FilterDrawer({ isOpen, setOpen, activeCategory, setActiveCategory, activeSortBy, setActiveSortBy, onApplyFilter }: FilterDrawerProps) {
-    function handleCategoryClick(category: Category) {
+    function handleCategoryClick(category: Category | undefined) {
         setActiveCategory(category);
         console.log(category);
     }
-    function handleSortByClick(sortBy: SortBy) {
+    function handleSortByClick(sortBy: SortBy | undefined) {
         setActiveSortBy(sortBy);
         console.log(sortBy);
     }
     function handleApplyFilter() {
-        onApplyFilter({ category: activeCategory, sortBy: activeSortBy });
+        onApplyFilter(activeCategory, activeSortBy);
     }
 
     return (

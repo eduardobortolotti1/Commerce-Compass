@@ -4,13 +4,18 @@ import React from "react";
 import { Category } from "../../../../../../types/category";
 
 interface CategorySelectorProps {
-    updateFunction: (category: Category) => void;
+    updateFunction: (category: Category | undefined) => void;
 }
 
 function CategorySelector({ updateFunction }: CategorySelectorProps) {
-    const [activeCategory, setActiveCategory] = React.useState<Category>("Headphone");
+    const [activeCategory, setActiveCategory] = React.useState<Category | undefined>("Headphone");
 
     function handleCategoryClick(category: Category) {
+        if (activeCategory === category) {
+            setActiveCategory(undefined);
+            updateFunction(undefined);
+            return;
+        }
         setActiveCategory(category);
         updateFunction(category);
     }

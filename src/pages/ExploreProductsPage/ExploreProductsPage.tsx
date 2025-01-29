@@ -14,7 +14,6 @@ import FilterDrawer from "./components/FilterDrawer/FilterDrawer";
 import React from "react";
 import { Category } from "../../types/category";
 import { SortBy } from "../../types/sortby";
-import Filter from "../../types/filter";
 
 const WrapperComponent = styled.div`
     padding-inline: 25px;
@@ -23,24 +22,21 @@ const WrapperComponent = styled.div`
 function ExploreProductsPage() {
     const [products, setProducts] = useState<ProductItemSearch[]>([]);
     const [filteredProducts, setFilteredProducts] = useState<ProductItemSearch[]>([]);
-    const [activeCategory, setActiveCategory] = React.useState<Category>("Headphone");
-    const [activeSortBy, setActiveSortBy] = React.useState<SortBy>("Popularity");
-    const [activeFilter, setActiveFilter] = React.useState({ category: activeCategory, sortBy: activeSortBy });
+    const [activeCategory, setActiveCategory] = React.useState<Category | undefined>("Headphone");
+    const [activeSortBy, setActiveSortBy] = React.useState<SortBy | undefined>("Popularity");
     // Bottom sheet drawer state
     const [isOpen, setOpen] = useState(false);
 
-    function handleApplyFilter(filter: Filter) {
-        setActiveFilter(filter);
+    function handleApplyFilter(category: Category | undefined, sortBy: SortBy | undefined) {
+        var filtered;
+        if (category != undefined) {
+            filtered = products.filter(product => product.category === category);
+        } else {
+            filtered = products;
+        }
 
-        // Using variable because of async nature of useState();
-        let filtered = products.filter(product => product.category === filter.category);
-
-        // Filters by category
-        setFilteredProducts(filtered);
-        console.log("Filtered array by category:")
-        console.log(filteredProducts);
         // Filters by sort by
-        switch (filter.sortBy) {
+        switch (sortBy) {
             case "Popularity":
                 filtered = [...filtered].sort((a, b) => b.visitCount - a.visitCount);
                 break;
@@ -57,13 +53,14 @@ function ExploreProductsPage() {
                 filtered = [...filtered].sort((a, b) => new Date(a.postedDate).getTime() - new Date(b.postedDate).getTime());
                 break;
         }
+        setFilteredProducts(filtered);
     }
 
 
     useEffect(() => {
         // Making the GET request to fetch product details
         axios
-            .get<ProductItemSearch[]>("https://run.mocky.io/v3/4e55a81c-7da3-4e9c-8737-7677900426a2")
+            .get<ProductItemSearch[]>("https://run.mocky.io/v3/46b9c5c1-1a43-4225-9d87-8715bb04dc95")
             .then((response) => {
                 // Successfully received the product data
                 setProducts(response.data);
