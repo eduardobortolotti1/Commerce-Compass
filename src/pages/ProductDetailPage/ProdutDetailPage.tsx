@@ -41,7 +41,7 @@ function ProductDetailPage() {
     const [productDetail, setProductDetail] = useState<ProductItemDetail | null>(null);
 
     const productId = useParams<{id: string}>().id;
-    var url: string;
+    let url: string;
     switch (productId) {
         case '001': url = 'https://run.mocky.io/v3/33f8d270-60ae-4698-baa3-44e26a8ce927'; break;
         case '002': url = 'https://run.mocky.io/v3/4fcb2b54-40e5-4fd1-a644-69e2f96a2e71'; break;
@@ -63,7 +63,7 @@ function ProductDetailPage() {
                 // Handle error if the request fails
                 console.error(err);
             });
-    }, []);
+    }, [url]);
 
     // Handles product not found situations
     if (productDetail === null) {

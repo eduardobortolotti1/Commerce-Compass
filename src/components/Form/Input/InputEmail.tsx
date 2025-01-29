@@ -1,4 +1,4 @@
-import { Input, StyledMail } from './styles'
+import { Input } from './styles'
 
 function InputEmail() {
     return (

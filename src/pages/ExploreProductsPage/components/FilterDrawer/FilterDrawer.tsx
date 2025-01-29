@@ -30,11 +30,9 @@ const FilterDrawerComponent = styled.div`
 function FilterDrawer({ isOpen, setOpen, activeCategory, setActiveCategory, activeSortBy, setActiveSortBy, onApplyFilter }: FilterDrawerProps) {
     function handleCategoryClick(category: Category | undefined) {
         setActiveCategory(category);
-        console.log(category);
     }
     function handleSortByClick(sortBy: SortBy | undefined) {
         setActiveSortBy(sortBy);
-        console.log(sortBy);
     }
     function handleApplyFilter() {
         onApplyFilter(activeCategory, activeSortBy);

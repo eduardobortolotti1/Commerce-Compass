@@ -1,4 +1,4 @@
-import { InputWrapper, Input, StyledLock } from './styles'
+import { InputWrapper, Input } from './styles'
 
 function InputPassword() {
     return (

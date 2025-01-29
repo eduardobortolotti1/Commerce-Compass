@@ -17,10 +17,9 @@ const CarouselItemComponent = styled.div`
 interface ProductItemProps {
     name: string,
     imageUrl: string,
-    id: string
 }
 
-function ProductBannerItem({ name, imageUrl, id }: ProductItemProps) {
+function ProductBannerItem({ name, imageUrl }: ProductItemProps) {
     const navigate = useNavigate();
 
     function handleClick() {

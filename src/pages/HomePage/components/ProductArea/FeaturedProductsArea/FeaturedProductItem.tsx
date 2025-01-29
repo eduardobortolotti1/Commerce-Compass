@@ -31,7 +31,7 @@ interface ProductItemProps {
     category?: Category
 }
 
-function FeaturedProductItem({ name, imageUrl, currency, value, id, children, style, category }: ProductItemProps) {
+function FeaturedProductItem({ name, imageUrl, currency, value, id, children, style }: ProductItemProps) {
     return (
         <FeaturedProductItemComponent to={`/product/${id}`} className="d-flex flex-column text-decoration-none" style={style}>
             <FeaturedProductImage>

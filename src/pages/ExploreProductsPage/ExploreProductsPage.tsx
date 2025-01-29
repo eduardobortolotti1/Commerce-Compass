@@ -28,7 +28,7 @@ function ExploreProductsPage() {
     const [isOpen, setOpen] = useState(false);
 
     function handleApplyFilter(category: Category | undefined, sortBy: SortBy | undefined) {
-        var filtered;
+        let filtered;
         if (category != undefined) {
             filtered = products.filter(product => product.category === category);
         } else {

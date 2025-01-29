@@ -14,7 +14,7 @@ const ButtonWrapper = styled.div`
 
 interface PrimaryButtonProps {
     text: string;
-    onClick?: (...args: any[]) => any;
+    onClick?: () => void;
     icon?: React.ElementType
     className?: string;
 }

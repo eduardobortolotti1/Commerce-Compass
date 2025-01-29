@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import ProductItemProps from "../../../../types/product";
-import ProductItem from "../ProductItem/ProductItem";
 import axios from "axios";
 
 {/* <ProductItem productId="1337" imageUrl={Headphone} name={"TMA-2 Comfort Wireless "} currency={"USD"} value={"270"} stars={4.6} reviews={3} /> */}

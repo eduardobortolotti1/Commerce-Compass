@@ -3,18 +3,18 @@ import { SearchBarComponent, Wrap } from "./styles";
 interface InputWithIconProps {
   icon: React.ElementType;  // `React.ElementType` is the correct type for React component props
   placeholder: string;
-  value?: any;
-  onChange?: any;
-  onClick?: any;
+  value?: string;
+  onChange?: (value: string) => void;
+  onClick?: () => void;
 }
 
 function InputWithIcon({ icon: IconComponent, placeholder, value: useState, onChange, onClick }: InputWithIconProps) {
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    onChange(event.target.value);
+    onChange?.(event.target.value);
   }
 
   function handleClick() {
-    onClick();
+    onClick?.();
   }
 
   return (

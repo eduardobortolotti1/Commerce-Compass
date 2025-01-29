@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import ButtonContainer from "../ButtonContainer";
 import SortButton from "./SortButton";
 import React from "react";

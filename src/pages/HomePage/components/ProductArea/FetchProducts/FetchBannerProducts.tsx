@@ -41,7 +41,7 @@ function FetchBannerProducts({ category }: FetchBannerProductsProps) {
                 console.error('Error fetching data:', error);
                 setLoading(false); // Stop loading on error
             });
-    }, [category]); // Re-run the effect whenever `category` changes
+    }, [category, url]); // Re-run the effect whenever `category/url` changes
 
     return (
         <WrapperAnimationComponent className="carousel">
