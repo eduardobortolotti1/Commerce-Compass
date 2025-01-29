@@ -24,3 +24,8 @@ export interface ProductItemSearch extends ProductItemProps {
     postedDate: Date 
     visitCount: number
 }
+
+export interface ProductSearchItemProps extends ProductItemProps {
+    stars: number
+    reviews: number
+}

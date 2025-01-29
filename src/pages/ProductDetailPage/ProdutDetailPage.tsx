@@ -46,9 +46,9 @@ function ProductDetailPage() {
         case '001': url = 'https://run.mocky.io/v3/33f8d270-60ae-4698-baa3-44e26a8ce927'; break;
         case '002': url = 'https://run.mocky.io/v3/4fcb2b54-40e5-4fd1-a644-69e2f96a2e71'; break;
         case '003': url = 'https://run.mocky.io/v3/457b734d-3936-4140-9a03-dbf679728ffd'; break;
-        case '004': url = 'https://run.mocky.io/v3/3055b675-9d28-4dd5-934a-f4da7b7bbe19'; break;
-        case '005': url = 'https://run.mocky.io/v3/ceea62a4-6238-45c9-aa85-94352bba7d12'; break;
-        case '006': url = 'https://run.mocky.io/v3/115e6556-a468-41a9-9fa0-0a700794e1f0'; break;
+        case '004': url = 'https://run.mocky.io/v3/636445cf-8e3f-49f0-9c8d-03ba4129621d'; break;
+        case '005': url = 'https://run.mocky.io/v3/adbf67f9-a007-448b-9863-4cc82236d42f'; break;
+        case '006': url = 'https://run.mocky.io/v3/05b378cc-4f9e-4b49-b2f4-bc088cfcefc8'; break;
         default: return <ProductNotFound />
     }
     useEffect(() => {
