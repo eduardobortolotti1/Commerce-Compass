@@ -8,6 +8,8 @@ import NavTrashButton from "../../components/Header/subcomponents/NavTrashButton
 import PrimaryButton from "../../components/Button/PrimaryButton";
 import { ChevronRight } from "react-feather";
 import CheckoutInfo from "./components/CheckoutInfo/CheckoutInfo";
+import { useEffect, useState } from "react";
+import { ShoppingCartProductItemProps } from "../../types/product";
 
 const ShoppingCartPageComponent = styled.div`
     padding-inline: 25px;
@@ -26,22 +28,47 @@ const ShoppingCartProducts = styled.div`
 `;
 
 function ShoppingCartPage() {
+    const [products, setProducts] = useState<ShoppingCartProductItemProps[]>([]);
+    const [total, setTotal] = useState<number>(0);
+
+    // Ensures that 'total' updates after 'products' changes
+    useEffect(() => {
+        setTotal(products.reduce((acc, product) => acc + product.value * product.amount, 0));
+    }, [products]); // Runs whenever 'products' changes (dependency)
+
+
+    // Handles + and - button clicks on the product amount
+    function handleAmountChange(id: string, amount: number) {
+        setProducts(
+            products
+                .map((product) => product.id === id ? { ...product, amount } : product)
+                .filter((product) => product.amount > 0));
+    }
+
+    // Handles the delete button click on the trash icon
+    function handleDeleteProduct(id: string) {
+        setProducts(products.filter((product) => product.id !== id));
+    }
+
+    function handleDeleteAllProducts() {
+        setProducts([]);
+    }
+
     return (
         <ShoppingCartPageComponent className="d-flex flex-column justify-content-between">
             <WrapperComponent>
                 <Header>
                     <NavBackButton />
                     <NavText text={"Shopping Cart"} />
-                    <NavTrashButton />
+                    <NavTrashButton onClick={handleDeleteAllProducts} />
                 </Header>
                 <ShoppingCartProducts className="d-flex flex-column">
-                    <ShoppingCartProductItem id={"1337"} imageUrl={Headphone} name={"TMA-2 Comfort Wireless "} currency={"USD"} value={270} amount={1} />
-                    <ShoppingCartProductItem id={"1337"} imageUrl={Headphone} name={"TMA-2 Comfort Wireless "} currency={"USD"} value={270} amount={1} />
+                    {products.map((product) => <ShoppingCartProductItem deleteProduct={handleDeleteProduct} handleAmountChange={handleAmountChange} amount={product.amount} id={product.id} imageUrl={product.imageUrl} name={product.name} currency={product.currency} value={product.value} />)}
                 </ShoppingCartProducts>
             </WrapperComponent>
             <TotalArea>
-                <CheckoutInfo />
-                <PrimaryButton text="Proceed to checkout" icon={ChevronRight} className="pt-3 pb-4"/>
+                <CheckoutInfo currency={"USD"} total={total} />
+                <PrimaryButton text="Proceed to checkout" icon={ChevronRight} className="pt-3 pb-4" />
             </TotalArea>
 
         </ShoppingCartPageComponent>

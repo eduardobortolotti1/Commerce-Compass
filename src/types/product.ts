@@ -29,3 +29,9 @@ export interface ProductSearchItemProps extends ProductItemProps {
     stars: number
     reviews: number
 }
+
+export interface ShoppingCartProductItemProps extends ProductItemProps {
+    amount: number
+    handleAmountChange?: (id: string, amount: number) => void
+    deleteProduct?: (id: string) => void
+}

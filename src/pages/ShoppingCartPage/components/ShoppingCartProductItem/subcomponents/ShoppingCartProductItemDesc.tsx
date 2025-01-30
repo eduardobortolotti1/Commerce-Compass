@@ -3,18 +3,20 @@ import ProductItemInfo from "../../../../SearchPage/components/ProductItem/subco
 import ProductItemAmount from "./ProductItemAmount";
 
 interface ShoppingCartProductItemDescProps {
-    productId: string
+    id: string
     name: string
     currency: string
     value: number
     amount: number
+    handleAmountChange?: (id: string, amount: number) => void
+    deleteProduct?: (id: string) => void
 }
 
-function ShoppingCartProductItemDesc({ name, currency, value, amount, productId }: ShoppingCartProductItemDescProps) {
+function ShoppingCartProductItemDesc({ id, name, currency, value, amount, handleAmountChange, deleteProduct }: ShoppingCartProductItemDescProps) {
     return (
         <ProductItemDescComponent>
-            <ProductItemInfo name={name} currency={currency} value={value} productId={productId}/>
-            <ProductItemAmount amount={amount} />
+            <ProductItemInfo name={name} currency={currency} value={value} productId={id} />
+            <ProductItemAmount id={id} amount={amount} handleAmountChange={handleAmountChange} deleteProduct={deleteProduct} />
         </ProductItemDescComponent>
     );
 }

@@ -2,7 +2,10 @@ import { Minus, Plus, Trash2 } from "react-feather";
 import styled from "styled-components";
 
 interface ProductItemAmountProps {
+    id: string
     amount: number
+    handleAmountChange?: (id: string, amount: number) => void
+    deleteProduct?: (id: string) => void
 }
 
 const ProductItemAmountComponent = styled.div`
@@ -23,19 +26,36 @@ const ChangeAmountButton = styled.button`
 
 `;
 
-function ProductItemAmount({ amount }: ProductItemAmountProps) {
+function ProductItemAmount({ id, amount, handleAmountChange, deleteProduct }: ProductItemAmountProps) {
+    function onAmountIncrease() {
+        if (!handleAmountChange) return;
+        handleAmountChange(id, amount + 1);
+    }
+
+    function onAmountDecrease() {
+        if (!handleAmountChange) return;
+        handleAmountChange(id, amount - 1);
+    }
+
+    function onDeleteProduct() {
+        if (!deleteProduct) return;
+        deleteProduct(id);
+    }
+
     return (
         <ProductItemAmountComponent className="d-flex align-items-center justify-content-between">
             <div className="d-flex align-items-center gap-4">
-                <ChangeAmountButton>
+                <ChangeAmountButton onClick={onAmountDecrease}>
                     <Minus />
                 </ChangeAmountButton>
                 <span>{amount}</span>
-                <ChangeAmountButton>
+                <ChangeAmountButton onClick={onAmountIncrease}>
                     <Plus />
                 </ChangeAmountButton>
             </div>
-            <Trash2 className="color-grey-dark-1"/>
+            <button>
+                <Trash2 className="color-grey-dark-1" onClick={onDeleteProduct}/>
+            </button>
         </ProductItemAmountComponent>
     );
 }

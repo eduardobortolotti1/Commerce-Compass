@@ -1,9 +1,13 @@
 import { Trash2 } from "react-feather";
 
-function NavTrashButton() {
+interface NavTrashButtonProps {
+    onClick?: () => void
+}
+
+function NavTrashButton({ onClick }: NavTrashButtonProps) {
     return (
         <button>
-            <Trash2 width="20px" height="20px"/>
+            <Trash2 width="20px" height="20px" onClick={onClick}/>
         </button>
     );
 }
