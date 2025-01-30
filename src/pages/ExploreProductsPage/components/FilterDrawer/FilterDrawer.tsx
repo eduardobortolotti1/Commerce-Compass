@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Category } from "../../../../types/category";
 import { SortBy } from "../../../../types/sortby";
 import PrimaryButton from "../../../../components/Button/PrimaryButton";
-import DrawerHeader from "../../../../components/Drawers/FilterDrawer/components/DrawerHeader";
+import DrawerHeader from "./DrawerHeader";
 import CategorySelector from "./Selectors/CategorySelector/CategorySelector";
 import SortSelector from "./Selectors/SortSelector/SortSelector";
 

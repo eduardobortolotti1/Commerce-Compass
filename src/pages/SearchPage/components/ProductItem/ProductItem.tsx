@@ -2,11 +2,8 @@ import ProductItemDesc from "./ProductItemDesc"
 import ProductItemImage from "./ProductItemImage"
 import ProductItemProps from "../../../../types/product"
 import { ProductItemComponent } from "./styles"
+import { ProductSearchItemProps } from "../../../../types/product"
 
-interface ProductSearchItemProps extends ProductItemProps {
-    stars: number
-    reviews: number
-}
 
 function ProductItem({ id, imageUrl, name, currency, value, stars, reviews }: ProductSearchItemProps) {
     return (
