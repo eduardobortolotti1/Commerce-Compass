@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { ShoppingCartProductItemProps } from "../types/product";
 
 // Define the context type
@@ -16,8 +16,16 @@ export const ShoppingCartContext = createContext<ShoppingCartContextType>({
 
 export function ShoppingCartProvider({ children }: { children: React.ReactNode }) {
     // Creates the context variables
-    const [products, setProducts] = useState<ShoppingCartProductItemProps[]>([]);
+    const [products, setProducts] = useState<ShoppingCartProductItemProps[]>(localStorage.getItem("products") ? JSON.parse(localStorage.getItem("products")!) : []);
 
+    // Stores the products in the local storage
+    useEffect(() => {
+        if (products.length === 0) {
+            localStorage.removeItem("products");
+            return;
+        }
+        localStorage.setItem("products", JSON.stringify(products));
+    }, [products]);
     // Returns the provider along with the context variables
     return (
         <ShoppingCartContext.Provider value={{ products, setProducts }}>
