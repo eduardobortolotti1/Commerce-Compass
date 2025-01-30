@@ -36,6 +36,7 @@ function FilterDrawer({ isOpen, setOpen, activeCategory, setActiveCategory, acti
     }
     function handleApplyFilter() {
         onApplyFilter(activeCategory, activeSortBy);
+        setOpen(false);
     }
 
     return (
