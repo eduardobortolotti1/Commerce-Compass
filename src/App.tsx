@@ -8,6 +8,7 @@ import SignUpPage from "./pages/SignPage/SignUpPage";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import ProductDetailPage from "./pages/ProductDetailPage/ProdutDetailPage"
 import ExploreProductsPage from "./pages/ExploreProductsPage/ExploreProductsPage";
+import { ShoppingCartProvider } from "./contexts/ShoppingCartContext";
 
 const router = createBrowserRouter([
   {
@@ -43,9 +44,11 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div className="screen">
-      <RouterProvider router={router} />
-    </div>
+    <ShoppingCartProvider>
+      <div className="screen">
+        <RouterProvider router={router} />
+      </div>
+    </ShoppingCartProvider>
   )
 }
 

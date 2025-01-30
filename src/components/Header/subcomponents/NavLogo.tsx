@@ -1,8 +1,9 @@
 import Logo from '@icons/logo.svg'
+import { Link } from 'react-router-dom';
 
 function NavLogo() {
     return (
-        <a href="#Home"><img src={Logo} alt="logo" height="25px" width="auto" /></a>
+        <Link to={"/"}><img src={Logo} alt="logo" height="25px" width="auto" /></Link>
     );
 }
 

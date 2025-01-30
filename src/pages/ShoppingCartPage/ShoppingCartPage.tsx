@@ -2,7 +2,6 @@ import Header from "../../components/Header/Header";
 import NavBackButton from "../../components/Header/subcomponents/NavBackButton";
 import styled from "styled-components";
 import ShoppingCartProductItem from "./components/ShoppingCartProductItem/ShoppingCartProductItem";
-import Headphone from "@images/headphone.png"
 import NavText from "../../components/Header/subcomponents/NavText";
 import NavTrashButton from "../../components/Header/subcomponents/NavTrashButton";
 import PrimaryButton from "../../components/Button/PrimaryButton";
@@ -10,6 +9,7 @@ import { ChevronRight } from "react-feather";
 import CheckoutInfo from "./components/CheckoutInfo/CheckoutInfo";
 import { useEffect, useState } from "react";
 import { ShoppingCartProductItemProps } from "../../types/product";
+import { useShoppingCart } from "../../contexts/ShoppingCartContext";
 
 const ShoppingCartPageComponent = styled.div`
     padding-inline: 25px;
@@ -28,7 +28,7 @@ const ShoppingCartProducts = styled.div`
 `;
 
 function ShoppingCartPage() {
-    const [products, setProducts] = useState<ShoppingCartProductItemProps[]>([]);
+    const [products, setProducts] = useShoppingCart();
     const [total, setTotal] = useState<number>(0);
 
     // Ensures that 'total' updates after 'products' changes
@@ -63,11 +63,11 @@ function ShoppingCartPage() {
                     <NavTrashButton onClick={handleDeleteAllProducts} />
                 </Header>
                 <ShoppingCartProducts className="d-flex flex-column">
-                    {products.map((product) => <ShoppingCartProductItem deleteProduct={handleDeleteProduct} handleAmountChange={handleAmountChange} amount={product.amount} id={product.id} imageUrl={product.imageUrl} name={product.name} currency={product.currency} value={product.value} />)}
+                    {products.map((product) => <ShoppingCartProductItem key={product.id} deleteProduct={handleDeleteProduct} handleAmountChange={handleAmountChange} amount={product.amount} id={product.id} imageUrl={product.imageUrl} name={product.name} currency={product.currency} value={product.value} />)}
                 </ShoppingCartProducts>
             </WrapperComponent>
             <TotalArea>
-                <CheckoutInfo currency={"USD"} total={total} />
+                <CheckoutInfo amount={products.length} currency={"USD"} total={total} />
                 <PrimaryButton text="Proceed to checkout" icon={ChevronRight} className="pt-3 pb-4" />
             </TotalArea>
 

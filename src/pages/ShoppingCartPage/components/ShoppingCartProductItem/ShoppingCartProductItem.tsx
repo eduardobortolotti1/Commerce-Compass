@@ -1,4 +1,4 @@
-import ProductItemProps, { ShoppingCartProductItemProps } from "../../../../types/product";
+import { ShoppingCartProductItemProps } from "../../../../types/product";
 import ProductItemImage from "../../../SearchPage/components/ProductItem/ProductItemImage";
 import { ProductItemComponent } from "../../../SearchPage/components/ProductItem/styles";
 import ShoppingCartProductItemDesc from "./subcomponents/ShoppingCartProductItemDesc";

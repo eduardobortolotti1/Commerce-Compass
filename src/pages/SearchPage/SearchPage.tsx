@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import InputWithIcon from "../../components/InputWithIcon/InputWithIcon";
 import { Search } from "react-feather";
-import Headphone from "@images/headphone.png"
 import SearchResults from "./components/SearchResults";
 import ProductItem from "./components/ProductItem/ProductItem";
 import PopularProducts from "./components/PopularProducts";
@@ -16,7 +15,7 @@ import { Link } from "react-router-dom";
 import LoadingItem from "./components/LoadingItem/LoadingItem";
 
 const SearchPageComponent = styled.div`
-    padding: 0 30px 30px 30px;
+    padding: 0 25px 25px 25px;
 `
 
 function SearchPage() {
@@ -54,15 +53,17 @@ function SearchPage() {
     }
 
     return (
-        <SearchPageComponent>
-            <Header>
-                <NavBackButton />
-                <NavText text={"Search"} />
-                <NavShoppingCartButton />
-            </Header>
-            <InputWithIcon icon={Search} placeholder={"Search Headphone"} value={searchValue} onChange={handleSearchChange} />
+        <SearchPageComponent className="d-flex flex-column justify-content-between">
+            <div style={searchValue === "" ? { marginBottom: "300px" } : undefined}>
+                <Header>
+                    <NavBackButton />
+                    <NavText text={"Search"} />
+                    <NavShoppingCartButton />
+                </Header>
+                <InputWithIcon icon={Search} placeholder={"Search Headphone"} value={searchValue} onChange={handleSearchChange} />
+            </div>
             <SearchResults>
-                {products.length === 0 ? <LoadingItem /> :
+                {searchValue === "" ? null :
                     filteredProducts.map(product => (
                         <Link to={`/product/${product.id}`} key={product.id} className="text-decoration-none">
                             <ProductItem id={product.id} imageUrl={product.imageUrl} name={product.name} currency={product.currency} value={product.value} stars={product.stars} reviews={product.reviews} />
