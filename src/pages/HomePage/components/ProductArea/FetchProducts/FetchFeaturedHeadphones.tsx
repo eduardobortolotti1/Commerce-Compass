@@ -1,6 +1,4 @@
 import FeaturedProductItem from "../FeaturedProductsArea/FeaturedProductItem";
-import Cables from "@images/cable.png"
-import Headphone from "@images/headphone.png"
 import ProductSwiperStyle1 from "../../../../../components/ProductSwiper/ProductSwiperStyle1";
 import styled from "styled-components";
 import { useEffect, useState } from "react";

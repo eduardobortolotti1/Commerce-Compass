@@ -65,18 +65,14 @@ function SearchPage() {
             <SearchResults>
                 {searchValue === "" ? null :
                     filteredProducts.map(product => (
-                        <Link to={`/product/${product.id}`} key={product.id} className="text-decoration-none">
-                            <ProductItem id={product.id} imageUrl={product.imageUrl} name={product.name} currency={product.currency} value={product.value} stars={product.stars} reviews={product.reviews} />
-                        </Link>
+                        <ProductItem id={product.id} imageUrl={product.imageUrl} name={product.name} currency={product.currency} value={product.value} stars={product.stars} reviews={product.reviews} />
                     ))
                 }
             </SearchResults>
             <PopularProducts>
                 {popularProducts.length === 0 ? <LoadingItem /> :
                     popularProducts.map(product => (
-                        <Link to={`/product/${product.id}`} key={product.id} className="text-decoration-none">
-                            <ProductItem id={product.id} imageUrl={product.imageUrl} name={product.name} currency={product.currency} value={product.value} stars={product.stars} reviews={product.reviews} />
-                        </Link>
+                        <ProductItem key={product.id} id={product.id} imageUrl={product.imageUrl} name={product.name} currency={product.currency} value={product.value} stars={product.stars} reviews={product.reviews} />
                     ))
                 }
             </PopularProducts>
