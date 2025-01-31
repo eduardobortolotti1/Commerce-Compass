@@ -11,7 +11,6 @@ import NavShoppingCartButton from "../../components/Header/subcomponents/NavShop
 import { useEffect, useState } from "react";
 import { ProductSearchItemProps } from "../../types/product";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import LoadingItem from "./components/LoadingItem/LoadingItem";
 
 const SearchPageComponent = styled.div`

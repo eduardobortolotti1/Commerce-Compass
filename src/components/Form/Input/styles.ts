@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Lock, Mail } from 'react-feather'
 
 const InputWrapper = styled.div`
     position: relative;

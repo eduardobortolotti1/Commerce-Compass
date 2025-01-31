@@ -5,7 +5,7 @@ import { useShoppingCart } from "../../../contexts/ShoppingCartContext";
 import { useEffect, useState } from "react";
 
 function NavShoppingCartButton() {
-    const [products, _] = useShoppingCart();
+    const [products] = useShoppingCart();
     const [amountInCart, setAmountInCart] = useState<number>(0);
 
     useEffect(() => {

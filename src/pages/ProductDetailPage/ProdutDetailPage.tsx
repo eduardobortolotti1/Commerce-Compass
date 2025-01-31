@@ -83,7 +83,7 @@ function ProductDetailPage() {
             console.warn('Attempted to add null product to cart');
             return;
         }
-        var isAlreadyInCart = products.find((product) => product.id === productDetail.id);
+        const isAlreadyInCart = products.find((product) => product.id === productDetail.id);
         if (isAlreadyInCart) {
             setProducts(
                 products.map((product) => product.id === productDetail.id ? { ...product, amount: product.amount + 1 } : product)

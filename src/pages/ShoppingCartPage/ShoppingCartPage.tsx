@@ -8,7 +8,6 @@ import PrimaryButton from "../../components/Button/PrimaryButton";
 import { ChevronRight } from "react-feather";
 import CheckoutInfo from "./components/CheckoutInfo/CheckoutInfo";
 import { useEffect, useState } from "react";
-import { ShoppingCartProductItemProps } from "../../types/product";
 import { useShoppingCart } from "../../contexts/ShoppingCartContext";
 
 const ShoppingCartPageComponent = styled.div`
