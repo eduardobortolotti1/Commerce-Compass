@@ -2,17 +2,31 @@ import ProductSwiper from "../../../../components/ProductSwiper/ProductSwiper";
 import FeaturedProductItem from "../../../HomePage/components/ProductArea/FeaturedProductsArea/FeaturedProductItem";
 import ProductReviewArea from "../ProductReviewArea/ProductReviewArea";
 import ProductReviewItem from "../ProductReviewArea/subcomponents/ProductReviewItem";
-import AnotherProductArea from "./AnotherProductArea";
 import ProductDetailImageItem from "./ProductDetailImageItem";
-import Headphone from "@images/headphone.png";
-import Cables from "@images/cable.png";
 import { ProductItemDetail } from "../../../../types/product";
+import OtherProductsArea from "./OtherProductsArea";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 interface ProductOverviewProps {
     productItemDetail: ProductItemDetail
 }
 
 function ProductOverview({ productItemDetail }: ProductOverviewProps) {
+    const [otherProducts, setOtherProducts] = useState<ProductItemDetail[]>([]);
+
+    // Grabs products from mock api to display in the other products area
+    useEffect(() => {
+        axios
+            .get<ProductItemDetail[]>("https://run.mocky.io/v3/2b1289c2-2319-4b34-b382-fcc421ab206b")
+            .then((response) => {
+                setOtherProducts(response.data);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }, []);
+
     return (
         <div className="renderedContainer ">
             <ProductSwiper spaceBetween={20} slidesPerView={1.1} style={{ marginBlockEnd: "25px", paddingInline: "25px" }}>
@@ -25,14 +39,11 @@ function ProductOverview({ productItemDetail }: ProductOverviewProps) {
                     return <ProductReviewItem key={index} productReview={productReview} />
                 })}
             </ProductReviewArea>
-            <AnotherProductArea>
-                <FeaturedProductItem name={"TMA-2 HD Wireless"} imageUrl={Headphone} id={""} currency={"USD"} value={350} />
-                <FeaturedProductItem name={"C02 - Cable"} imageUrl={Cables} id={""} currency={"USD"} value={25} />
-                <FeaturedProductItem name={"TMA-2 HD Wireless"} imageUrl={Headphone} id={""} currency={"USD"} value={350} />
-                <FeaturedProductItem name={"C02 - Cable"} imageUrl={Cables} id={""} currency={"USD"} value={25} />
-                <FeaturedProductItem name={"TMA-2 HD Wireless"} imageUrl={Headphone} id={""} currency={"USD"} value={350} />
-                <FeaturedProductItem name={"C02 - Cable"} imageUrl={Cables} id={""} currency={"USD"} value={25} />
-            </AnotherProductArea>
+            <OtherProductsArea>
+                {otherProducts.map((product, index) => {
+                    return <FeaturedProductItem key={index} name={product.name} imageUrl={product.imageUrl} id={product.id} currency={product.currency} value={product.value} />
+                })}
+            </OtherProductsArea>
         </div>
     );
 }
