@@ -1,22 +1,18 @@
 import ButtonContainer from "../ButtonContainer";
 import CategoryButton from "./CategoryButton";
-import React from "react";
 import { Category } from "../../../../../../types/category";
 
 interface CategorySelectorProps {
+    activeCategory: Category | undefined;
     updateFunction: (category: Category | undefined) => void;
 }
 
-function CategorySelector({ updateFunction }: CategorySelectorProps) {
-    const [activeCategory, setActiveCategory] = React.useState<Category | undefined>("Headphone");
-
+function CategorySelector({ activeCategory, updateFunction }: CategorySelectorProps) {
     function handleCategoryClick(category: Category) {
         if (activeCategory === category) {
-            setActiveCategory(undefined);
             updateFunction(undefined);
             return;
         }
-        setActiveCategory(category);
         updateFunction(category);
     }
 

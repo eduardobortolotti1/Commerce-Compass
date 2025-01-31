@@ -47,8 +47,8 @@ function FilterDrawer({ isOpen, setOpen, activeCategory, setActiveCategory, acti
                         <div>
                             <FilterDrawerComponent className="d-flex flex-column">
                                 <DrawerHeader text="Filter" setOpen={setOpen}/>
-                                <CategorySelector updateFunction={handleCategoryClick} />
-                                <SortSelector updateFunction={handleSortByClick} />
+                                <CategorySelector activeCategory={activeCategory} updateFunction={handleCategoryClick} />
+                                <SortSelector activeSortBy={activeSortBy} updateFunction={handleSortByClick} />
                                 <PrimaryButton text="Apply Filter" onClick={handleApplyFilter} />
                             </FilterDrawerComponent>
                         </div>

@@ -82,7 +82,7 @@ function ExploreProductsPage() {
             <WrapperComponent>
                 <Header>
                     <NavBackButton />
-                    <NavShoppingCartButton amountInCart={2} />
+                    <NavShoppingCartButton />
                 </Header>
                 <ProductHeader onClick={() => setOpen(true)} />
             </WrapperComponent>
