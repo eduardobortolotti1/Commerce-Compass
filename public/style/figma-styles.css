@@ -1,7 +1,9 @@
 /* Styles according to the design sheet */
 :root {
   --primary: #0ACF83;
-  --primary-light: #97c9b6;
+  --primary-light-1: #d7fbed;
+  --primary-light-2: #97c9b6;
+  --primary-dark: #079e64;
   --default: #000000;
   --grey-dark-1: #7F7F7F;
   --grey: #BABABA;

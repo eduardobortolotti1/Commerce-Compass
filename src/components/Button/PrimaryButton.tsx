@@ -9,6 +9,14 @@ const ButtonWrapper = styled.div`
         background-color: var(--primary);
         border-radius: 10px;
         width: 100%;
+
+        &:hover {
+            background-color: var(--primary-dark);
+        }
+
+        &:active {
+            background-color: var(--primary-light-2);
+        }
     }
 `;
 

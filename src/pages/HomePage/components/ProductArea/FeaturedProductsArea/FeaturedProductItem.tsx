@@ -14,7 +14,7 @@ const FeaturedProductItemComponent = styled(Link)`
 
     &:hover {
         cursor: pointer;
-        background-color: var(--primary-light);
+        background-color: var(--primary-light-1);
     }
 `
 
