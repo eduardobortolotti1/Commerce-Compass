@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface ProductsHeaderProps {
     text: string;
 }
@@ -8,7 +10,7 @@ function ProductsHeader({ text }: ProductsHeaderProps) {
             <h2 className="font-16">
                 {text}
             </h2>
-            <a href="#see-all" className="text-decoration-none color-grey-dark-1">See all</a>
+            <Link to={"/products"} className="text-decoration-none color-grey-dark-1">See all</Link>
         </div>
     );
 }
