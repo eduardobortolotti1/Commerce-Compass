@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import FilterButton from "../../../../components/FilterButton/FilterButton";
+import FilterButton from "../../../../components/Button/FilterButton/FilterButton";
 
 const ProductPresentation = styled.div`
     margin-block-end: 20px;

@@ -9,6 +9,7 @@ import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import ProductDetailPage from "./pages/ProductDetailPage/ProdutDetailPage"
 import ExploreProductsPage from "./pages/ExploreProductsPage/ExploreProductsPage";
 import { ShoppingCartProvider } from "./contexts/ShoppingCartContext";
+import { AuthProvider } from "./contexts/AuthContext";
 
 const router = createBrowserRouter([
   {
@@ -44,11 +45,13 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <ShoppingCartProvider>
-      <div className="screen">
-        <RouterProvider router={router} />
-      </div>
-    </ShoppingCartProvider>
+    <AuthProvider>
+      <ShoppingCartProvider>
+        <div className="screen">
+          <RouterProvider router={router} />
+        </div>
+      </ShoppingCartProvider>
+    </AuthProvider>
   )
 }
 

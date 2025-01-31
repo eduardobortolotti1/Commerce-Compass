@@ -1,11 +1,23 @@
 import { SignButtonComponent } from "./styles";
+import styled from "styled-components";
 
-function SignUpButton() {
+const SignUpButtonComponent = styled(SignButtonComponent)`
+    margin-block-start: 60px;
+`;
+
+interface SignUpButtonProps {
+    isLoading: boolean;
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
+function SignUpButton({ isLoading, onClick }: SignUpButtonProps) {
+
+
     return (
         <>
-            <SignButtonComponent type="submit" className="btn btn-primary w-100 fw-bold" style={{marginBlockStart: "60px"}}>
-                Sign Up
-            </SignButtonComponent>
+            <SignUpButtonComponent type="submit" onClick={isLoading ? undefined : onClick} className="w-100 fw-bold">
+                {isLoading ? "Loading..." : "Sign Up"}
+            </SignUpButtonComponent>
         </>
     );
 }

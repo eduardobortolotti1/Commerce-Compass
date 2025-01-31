@@ -14,7 +14,7 @@ const SearchBarComponent = styled.input`
 
 const Wrap = styled.div`
 
-    height: 45px;
+    min-height: 45px;
     position: relative;
 
     svg {

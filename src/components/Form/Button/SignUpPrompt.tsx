@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 function SignUpPrompt() {
     return (
         <>
-            <p className='font-14 mb-5'>
-                Didn't have any account? <a href="#" className='color-primary fw-bold'>Sign Up here</a>
+            <p className='font-14 mb-4 color-white'>
+                Don't have an account? <Link to={"/signUp"} className='color-primary fw-bold text-decoration-underline'>Sign Up here</Link>
             </p>
         </>
     )

@@ -22,13 +22,8 @@ const Input = styled.input`
     }
 `;
 
-const StyledLock = styled(Lock)`
-    position: absolute;
-    top: 50%;
-    transform: translate(15px, -50%);
-    color: var(--grey);
+const InputWrapperComponent = styled.div`
+    gap: 20px;
 `;
 
-const StyledMail = styled(Mail)``;
-
-export { InputWrapper, Input, StyledLock, StyledMail };
+export { InputWrapper, Input, InputWrapperComponent };

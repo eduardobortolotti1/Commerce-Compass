@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 const SignButtonComponent = styled.button`
     height: 50px;
+    border-radius: 10px;
     background-color: var(--primary);
+    color: var(--white);
     border: none;
     margin-block-end: 10px;
 `
