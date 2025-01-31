@@ -2,19 +2,19 @@ import { Category } from "./category"
 import { ProductReview } from "./review"
 
 export default interface ProductItemProps {
-    id: string // short number id
+    id: string
     imageUrl: string
     name: string
-    currency: string // Always USD
+    currency: string
     value: number
 }
 
 export interface ProductItemDetail extends ProductItemProps {
     images: string[]
     reviews: ProductReview[]
-    descriptionTitle: string // Use catchy terms like "The best headphones in the market"
-    description_section1: string // one paragraph only
-    description_section2: string // one paragraph only
+    descriptionTitle: string
+    description_section1: string
+    description_section2: string
 }
 
 export interface ProductItemSearch extends ProductItemProps {
