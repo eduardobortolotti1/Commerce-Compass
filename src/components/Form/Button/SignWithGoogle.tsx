@@ -11,7 +11,7 @@ function SignUpWithGoogle({ isLoading, onClick }: SignUpWithGoogleProps) {
         <>
             <SignWithGoogleButton type="submit" onClick={isLoading ? undefined : onClick} className="btn btn-primary w-100 fw-bold">
                 <img src={google} alt="google icon" />
-                {isLoading ? "Loading..." : "Sign up with Google"}
+                {isLoading ? "Loading..." : "Sign with Google"}
             </SignWithGoogleButton>
         </>
     );
