@@ -20,7 +20,7 @@ function SignInForm() {
     // Handle successful authentication with useEffect
     useEffect(() => {
         if (user && !isLoading) {
-            navigate("/");
+            navigate("/home");
         }
     }, [user, navigate, isLoading]);
 
