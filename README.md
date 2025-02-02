@@ -19,4 +19,4 @@ O projeto foi inteiramente feito com React e TypeScipt, com pacotes adicionais p
 - **React-modal-sheet** - Usado para a criação da aba de filtro (Bottom Sheet)
 
 ### Deploy
-O da aplicação foi feita na plataforma Vercel. Acesse o site clicando neste [link]()
+O da aplicação foi feita na plataforma Vercel. Acesse o site clicando neste [link](https://commerce-compass-eta.vercel.app/)
