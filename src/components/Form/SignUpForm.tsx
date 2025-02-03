@@ -7,13 +7,15 @@ import { Lock, Mail } from "react-feather";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import { InputWrapperComponent } from "./Input/styles";
+import FormErrorMessage from "./FormErrorMessage/FormErrorMessage";
+import { FormComponent } from "./styles";
 
 
 function SignUpForm() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const { signUpWithEmail, loginWithGoogle, user } = useAuth();
+    const { signUpWithEmail, loginWithGoogle, user, error } = useAuth();
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
 
@@ -57,15 +59,18 @@ function SignUpForm() {
     }
 
     return (
-        <form className="w-100 text-center d-flex flex-column">
-            <InputWrapperComponent className="d-flex flex-column">
-                <InputWithIcon icon={Mail} placeholder={"Insert Email"} value={email} onChange={setEmail} style={{ height: "50px" }} />
-                <InputWithIcon icon={Lock} placeholder={"Insert Password"} type={"password"} value={password} onChange={setPassword} style={{ height: "50px" }} />
-            </InputWrapperComponent>
-            <SignUpButton isLoading={isLoading} onClick={handleEmailSignUp} />
-            <SignUpWithGoogle isLoading={isLoading} onClick={handleGoogleLogin} />
-            <SignInPrompt />
-        </form>
+        <FormComponent>
+            {error && <FormErrorMessage message={error} />}
+            <form className="w-100 text-center d-flex flex-column">
+                <InputWrapperComponent className="d-flex flex-column">
+                    <InputWithIcon icon={Mail} placeholder={"Insert Email"} value={email} onChange={setEmail} style={{ height: "50px" }} />
+                    <InputWithIcon icon={Lock} placeholder={"Insert Password"} type={"password"} value={password} onChange={setPassword} style={{ height: "50px" }} />
+                </InputWrapperComponent>
+                <SignUpButton isLoading={isLoading} onClick={handleEmailSignUp} />
+                <SignUpWithGoogle isLoading={isLoading} onClick={handleGoogleLogin} />
+                <SignInPrompt />
+            </form>
+        </FormComponent>
     )
 }
 

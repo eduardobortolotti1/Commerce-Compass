@@ -8,12 +8,14 @@ import { Lock, Mail } from "react-feather";
 import InputWithIcon from "../InputWithIcon/InputWithIcon";
 import { InputWrapperComponent } from "./Input/styles";
 import SignWithGoogle from "./Button/SignWithGoogle";
+import FormErrorMessage from "./FormErrorMessage/FormErrorMessage";
+import { FormComponent } from "./styles";
 
 function SignInForm() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const { loginWithEmail, loginWithGoogle, user } = useAuth();
+    const { loginWithEmail, loginWithGoogle, user, error } = useAuth();
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
 
@@ -57,16 +59,19 @@ function SignInForm() {
     }
 
     return (
-        <form className="w-100 text-center">
-            <InputWrapperComponent className="d-flex flex-column">
-                <InputWithIcon icon={Mail} placeholder={"Insert Email"} value={email} onChange={setEmail} style={{ height: "50px" }} />
-                <InputWithIcon icon={Lock} placeholder={"Insert Password"} type={"password"} value={password} onChange={setPassword} style={{ height: "50px" }} />
-            </InputWrapperComponent>
-            <ForgotPassword />
-            <SignInButton isLoading={isLoading} onClick={handleEmailLogin} />
-            <SignWithGoogle isLoading={isLoading} onClick={handleGoogleLogin} />
-            <SignUpPrompt />
-        </form>
+        <FormComponent>
+            {error && <FormErrorMessage message={error} />}
+            <form className="w-100 text-center">
+                <InputWrapperComponent className="d-flex flex-column">
+                    <InputWithIcon icon={Mail} placeholder={"Insert Email"} value={email} onChange={setEmail} style={{ height: "50px" }} />
+                    <InputWithIcon icon={Lock} placeholder={"Insert Password"} type={"password"} value={password} onChange={setPassword} style={{ height: "50px" }} />
+                </InputWrapperComponent>
+                <ForgotPassword />
+                <SignInButton isLoading={isLoading} onClick={handleEmailLogin} />
+                <SignWithGoogle isLoading={isLoading} onClick={handleGoogleLogin} />
+                <SignUpPrompt />
+            </form>
+        </FormComponent>
     )
 }
 
