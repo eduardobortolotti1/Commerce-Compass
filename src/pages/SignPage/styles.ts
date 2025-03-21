@@ -7,6 +7,7 @@ const SignPage = styled.div`
     background-image: url('sign-in.png');
     object-fit: cover;
     background-repeat: no-repeat;
+    background-position: center;
     padding-inline: 25px;
     overflow: hidden;
 `
