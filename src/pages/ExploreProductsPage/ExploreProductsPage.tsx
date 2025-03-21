@@ -14,8 +14,6 @@ import FilterDrawer from "./components/FilterDrawer/FilterDrawer";
 import React from "react";
 import { Category } from "../../types/category";
 import { SortBy } from "../../types/sortby";
-import { log } from "console";
-import { colgroup } from "motion/react-client";
 
 const WrapperComponent = styled.div`
     padding-inline: 25px;
