@@ -14,6 +14,8 @@ import FilterDrawer from "./components/FilterDrawer/FilterDrawer";
 import React from "react";
 import { Category } from "../../types/category";
 import { SortBy } from "../../types/sortby";
+import { log } from "console";
+import { colgroup } from "motion/react-client";
 
 const WrapperComponent = styled.div`
     padding-inline: 25px;
@@ -28,6 +30,7 @@ function ExploreProductsPage() {
     const [isOpen, setOpen] = useState(false);
 
     function handleApplyFilter(category: Category | undefined, sortBy: SortBy | undefined) {
+        console
         let filtered;
         if (category != undefined) {
             filtered = products.filter(product => product.category === category);
@@ -60,11 +63,12 @@ function ExploreProductsPage() {
     useEffect(() => {
         // Making the GET request to fetch product details
         axios
-            .get<ProductItemSearch[]>("https://run.mocky.io/v3/46b9c5c1-1a43-4225-9d87-8715bb04dc95")
+            .get<ProductItemSearch[]>("https://run.mocky.io/v3/240659b4-9031-4540-9e18-5e5519928064")
             .then((response) => {
                 // Successfully received the product data
                 setProducts(response.data);
                 setFilteredProducts(response.data);
+                console.log("Response data: ", response.data);
             })
             .catch((err) => {
                 // Handle error if the request fails

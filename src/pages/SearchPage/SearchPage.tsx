@@ -26,7 +26,7 @@ function SearchPage() {
     // Grabs product list once because of mock API response
     useEffect(() => {
         axios
-            .get("https://run.mocky.io/v3/688db0e0-deea-4e00-bf48-7f983a129d42")
+            .get("https://run.mocky.io/v3/91be5b11-26be-4e08-b233-2adc607b751b")
             .then(response => {
                 setProducts(response.data);
                 setFilteredProducts(response.data);
@@ -36,7 +36,7 @@ function SearchPage() {
             }
             )
         axios
-            .get("https://run.mocky.io/v3/0045dd64-07d5-41c4-8eb5-29af78f51c1d")
+            .get("https://run.mocky.io/v3/91be5b11-26be-4e08-b233-2adc607b751b")
             .then(response => {
                 setPopularProducts(response.data);
             })

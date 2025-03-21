@@ -24,7 +24,7 @@ function FetchFeaturedHeadphones() {
     // Loading Featured Headphones information
     useEffect(() => {
         axios
-            .get<ProductItemProps[]>("https://run.mocky.io/v3/2b1289c2-2319-4b34-b382-fcc421ab206b")
+            .get<ProductItemProps[]>("https://run.mocky.io/v3/22fe32ff-b575-46d7-993d-688ac397012c")
             .then((response) => {
                 setFeaturedHeadphones(response.data);
             })

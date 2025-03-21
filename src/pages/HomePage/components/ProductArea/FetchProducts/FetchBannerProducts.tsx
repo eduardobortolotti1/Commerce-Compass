@@ -27,14 +27,14 @@ function FetchBannerProducts({ category }: FetchBannerProductsProps) {
     const [products, setProducts] = useState<{ name: string; imageUrl: string }[]>([]);
     const [loading, setLoading] = useState(true);
 
-    const url = category === 'Headphone' ? 'https://run.mocky.io/v3/9d58e83d-66cb-496c-9915-e4e4b22b7c49' : 'https://run.mocky.io/v3/0ce9375a-e0fb-4412-b4d2-f2dff8a59eaa';
+    const url = category === 'Headphone' ? 'https://run.mocky.io/v3/4fc09470-1783-4145-bff6-21668e86943a' : 'https://run.mocky.io/v3/6500e145-9964-4bdd-971d-d3bff72df3bd';
 
     useEffect(() => {
         setLoading(true); // Uses Skeleton div after category dependency changes
 
         axios.get(url)
             .then((response) => {
-                setProducts(response.data.products); // Store the products in state
+                setProducts(response.data); // Store the products in state
                 setLoading(false); // Data loaded
             })
             .catch((error) => {

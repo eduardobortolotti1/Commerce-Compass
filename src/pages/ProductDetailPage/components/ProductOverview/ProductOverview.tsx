@@ -18,7 +18,7 @@ function ProductOverview({ productItemDetail }: ProductOverviewProps) {
     // Grabs products from mock api to display in the other products area
     useEffect(() => {
         axios
-            .get<ProductItemDetail[]>("https://run.mocky.io/v3/2b1289c2-2319-4b34-b382-fcc421ab206b")
+            .get<ProductItemDetail[]>("https://run.mocky.io/v3/6a10c519-5864-4cd7-9d36-2dda68984a53")
             .then((response) => {
                 setOtherProducts(response.data);
             })
